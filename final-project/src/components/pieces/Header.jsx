@@ -6,10 +6,18 @@ const Header = () => {
     return (
         <header>
             <h2><Link to="/">LOGO</Link></h2> 
-            <p><Link to="/practice-notes">Notes</Link></p>
-            <p><Link to="/practice-intervals">Intervals</Link></p>
-            <p><Link to="/practice-rhythm">Rhythm</Link></p>
-            <p><Link to="/help">Help</Link></p>
+                <Link to={'/practice-notes'}>
+                    <Button text={'Notes'} />
+                </Link>
+                <Link to={'/practice-intervals'}>
+                    <Button text={'Intervals'}/>    
+                </Link>
+                <Link to={'/practice-rhythm'}>
+                    <Button text={'Rhythm'}/>
+                </Link>
+                <Link to={"/help"}>
+                    <Button text={'Help'}/>
+                </Link>
         </header>
     );
 }

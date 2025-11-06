@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import Button from "./pieces/Button";
 import Footer from "./pieces/Footer";
 import Header from "./pieces/Header";
@@ -13,9 +14,15 @@ const HomePage = () => {
                 ____________________________________
                 <div>
                     <h4>Ready to get started?</h4>
-                    <Button text={'Notes'}/>
-                    <Button text={'Intervals'}/>
-                    <Button text={'Rhythm'}/>
+                    <Link to={'/practice-notes'}>
+                        <Button text={'Notes'} />
+                    </Link>
+                    <Link to={'/practice-intervals'}>
+                        <Button text={'Intervals'}/>    
+                    </Link>
+                    <Link to={'/practice-rhythm'}>
+                        <Button text={'Rhythm'}/>
+                    </Link>
                 </div>
             </main>
             <Footer />
