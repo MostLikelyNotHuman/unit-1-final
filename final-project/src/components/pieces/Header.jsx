@@ -1,11 +1,13 @@
 import { Link } from "react-router";
 import Button from "./Button";
+import './Header.css';
 
 const Header = () => {
 
     return (
         <header>
-            <h2><Link to="/">LOGO</Link></h2> 
+            <h2 id='logo'><Link to="/">LOGO</Link></h2> 
+            <div id='header-nav-links'>
                 <Link to={'/practice-notes'}>
                     <Button text={'Notes'} />
                 </Link>
@@ -18,6 +20,7 @@ const Header = () => {
                 <Link to={"/help"}>
                     <Button text={'Help'}/>
                 </Link>
+            </div>
         </header>
     );
 }
