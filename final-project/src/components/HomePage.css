@@ -1,0 +1,12 @@
+#homepage-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#homepage-starting-prompt {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: center;
+}
