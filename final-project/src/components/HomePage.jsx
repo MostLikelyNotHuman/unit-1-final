@@ -2,7 +2,6 @@ import { Link } from "react-router";
 import Button from "./pieces/Button";
 import Footer from "./pieces/Footer";
 import Header from "./pieces/Header";
-import './HomePage.css';
 
 const HomePage = () => {
     return(
