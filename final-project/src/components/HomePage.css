@@ -1,4 +1,10 @@
 
+main {
+    display: flex;
+    flex-direction: column;
+    
+}
+
 #homepage-intro {
     display: flex;
     flex-direction: column;
@@ -17,4 +23,8 @@
     margin: auto;
     margin-bottom: 10px;
     border-radius: 15px;
+}
+
+#homepage-starting-prompt p {
+    padding: 0px 20px;
 }
