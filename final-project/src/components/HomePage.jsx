@@ -6,7 +6,6 @@ import Header from "./pieces/Header";
 const HomePage = () => {
     return(
         <>
-            <Header />
             <main>
                 <div id='homepage-intro'>
                     <h2>Welcome! **Welcome message**</h2>
@@ -30,7 +29,6 @@ const HomePage = () => {
                     </div>
                 </div>
             </main>
-            <Footer />
         </>
     );
 };
