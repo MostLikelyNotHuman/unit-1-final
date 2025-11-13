@@ -1,8 +1,7 @@
 
-main {
+.homePage-main {
     display: flex;
     flex-direction: column;
-    
 }
 
 #homepage-intro {

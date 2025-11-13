@@ -8,7 +8,7 @@ const HomePage = () => {
     return(
         <>
             <Header />
-            <main>
+            <main className="homePage-main">
                 <div id='homepage-intro'>
                     <h2>Welcome! **Welcome message**</h2>
                     <p>**Introduction paragraph**</p>

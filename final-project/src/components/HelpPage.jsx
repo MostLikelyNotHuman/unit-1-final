@@ -7,7 +7,7 @@ const HelpPage = () => {
     return (
         <>
             <Header />
-            <main>
+            <main className="helpPage-main">
                 <div id="help-content">
                     <h3>About this app</h3>
                     <p> Welcome to [insert name]! This application is designed for anyone 
