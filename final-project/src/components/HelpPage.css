@@ -1,6 +1,7 @@
 main {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
 }
 
 #help-content {
@@ -13,18 +14,7 @@ main {
 }
 
 #nav-bar {
-    background-color: rgb(236, 236, 236);
+    background-color: rgb(238, 238, 238);
     width: 250px;
     padding: 20px;
-}
-
-@media (max-width: 800px) {
-    main {
-        display: flex;
-        flex-direction: column;
-    }
-
-    #nav-bar {
-        width: auto;
-    }
 }
