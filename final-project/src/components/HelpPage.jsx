@@ -1,6 +1,15 @@
 import Footer from "./pieces/Footer";
 import Header from "./pieces/Header";
 import './HelpPage.css';
+import staffImage from '../assets/images/help-page/staff.png';
+import notesImage from '../assets/images/help-page/all-notes.png';
+import wholeNote from '../assets/images/rhythm/whole-note.png';
+import halfNote from '../assets/images/rhythm/half-note.png';
+import quarterNote from '../assets/images/rhythm/quarter-note.png';
+import eighthNote from '../assets/images/rhythm/eighth-note.png';
+import eighth2 from '../assets/images/rhythm/eighth-2.png';
+import sixteenthNote from '../assets/images/rhythm/sixteenth-note.png';
+import sixteenth2 from '../assets/images/rhythm/sixteenth-2.png';
 
 const HelpPage = () => {
 
@@ -14,20 +23,27 @@ const HelpPage = () => {
                         reading notes and rhythm. Located on the top bar or the home page are links 
                         to a variety of exercises to strengthen your reading skills. Currently, 
                         you can find exercises to test your ability to recognize notes, intervals, and rhythms.</p>
+                    <p>This help page covers the things you'll need to know to interact with the different 
+                        activities, but is by no means a complete overview of the basics of reading music. 
+                        Feel free to use whatever other resources you would like to help improve your skills!</p>
                     <h3>Notes</h3>
                     <p>Notes are arranged on something called a <strong>staff</strong>, which is this set of horizontal
-                    lines. [Place image of blank staff]</p>
-                    <img src=""></img>
+                    lines.</p>
+                    <img src={staffImage} width={400}></img>
                     <p>Each line and space on the staff represents a different pitch.
                     A common way to remember where each note goes is to use the mnemonic
                     'Every Good Boy Deserves Fudge' for the lines E G B D F, and
-                    the word FACE for the spaces F A C and E. [Place image of notes on staff]</p>
-                    <img src=""></img>
+                    the word FACE for the spaces F A C and E.</p>
+                    <img src={notesImage} width={400}></img>
                     <p>Maybe you've noticed - the notes start over at A after G! The system only 
-                    uses the first seven letters of the alphabet to identify notes.</p>
+                    uses the first seven letters of the alphabet to identify notes. However, there are more 
+                    than seven notes - there are actually twelve! Each of these notes can be modified in pitch 
+                    by placing something called an <strong>accidental</strong> before it.</p>
                     <h3>Intervals</h3>
                     <p>The word 'interval' refers to the distance in pitch between two notes.
-                    The smallest distance between two notes in western music is called a <strong>half-step</strong> or a <strong>semitone</strong>.</p>
+                    The smallest distance between two notes in western music is called a <strong>half-step</strong> or a <strong>semitone</strong>. 
+                    This is the distance between G and G# or B and Bb, for instance.</p>
+                    <p>Every interval has its own unique name.</p>
                     <h3>Rhythm</h3>
                     <p>Notes placed on a staff don't just tell you their pitch, they also tell you their rhythm.
                     All of the examples on this page have used something called a <strong>quarter note</strong> to help visualize
@@ -38,39 +54,39 @@ const HelpPage = () => {
                             <th>is equal in duration to ...</th>
                         </tr>
                         <tr>
-                            <td>(image of whole note)</td>
-                            <td>(image of two half notes)</td>
+                            <td><img src={wholeNote}></img></td>
+                            <td className="table-two-images"><img src={halfNote}></img><img src={halfNote}></img></td>
                         </tr>
                         <tr>
                             <td>One Whole Note</td>
                             <td>Two Half Notes</td>
                         </tr>
                         <tr>
-                            <td>(image of half note)</td>
-                            <td>(image of two quarter notes)</td>
+                            <td><img src={halfNote}></img></td>
+                            <td className="table-two-images"><img src={quarterNote}></img><img src={quarterNote}></img></td>
                         </tr>
                         <tr>
                             <td>One Half Note</td>
                             <td>Two Quarter Notes</td>
                         </tr>
                         <tr>
-                            <td>(image of quarter note)</td>
-                            <td>(image of two eighth notes)</td>
+                            <td><img src={quarterNote}></img></td>
+                            <td><img src={eighth2}></img></td>
                         </tr>
                         <tr>
                             <td>One Quarter Note</td>
                             <td>Two Eighth Notes</td>
                         </tr>
                         <tr>
-                            <td>(image of eighth note)</td>
-                            <td>(image of two sixteenth notes)</td>
+                            <td><img src={eighthNote}></img></td>
+                            <td><img src={sixteenth2}></img></td>
                         </tr>
                         <tr>
                             <td>One Eighth Note</td>
                             <td>Two Sixteenth Notes</td>
                         </tr>
                         <tr>
-                            <td>(image of sixteenth note)</td>
+                            <td><img src={sixteenthNote}></img></td>
                             <td>(image of two thirty-second notes)</td>
                         </tr>
                         <tr>
