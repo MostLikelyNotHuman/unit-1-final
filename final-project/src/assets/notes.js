@@ -1,50 +1,50 @@
 export const notes = {
-    c: {
+    c4: {
         pitch: 0,
         text: 'C',
-        img: './notes/PLACEHOLDER/c.png',
+        img: './images/notes/c4.png',
         audio: ''
     },
-    d: {
+    d4: {
         pitch: 2,
         text: 'D',
-        img: './notes/PLACEHOLDER/d.png',
+        img: './images/notes/d4.png',
         audio: ''
     },
-    e: {
+    e4: {
         pitch: 4,
         text: 'E',
-        img: './notes/PLACEHOLDER/e.png',
+        img: './images/notes/e4.png',
         audio: ''
     },
-    f: {
+    f4: {
         pitch: 5,
         text: 'F',
-        img: './images/notes/PLACEHOLDER/f.png',
+        img: './images/notes/f4.png',
         audio: ''
     },
-    g: {
+    g4: {
         pitch: 7,
         text: 'G',
-        img: './images/notes/PLACEHOLDER/g.png',
+        img: './images/notes/g4.png',
         audio: ''
     },
-    a: {
+    a4: {
         pitch: 9,
         text: 'A',
-        img: './images/notes/PLACEHOLDER/a.png',
+        img: './images/notes/a4.png',
         audio: ''
     },
-    b: {
+    b4: {
         pitch: 11,
         text: 'B',
-        img: './images/notes/PLACEHOLDER/b.png',
+        img: './images/notes/b4.png',
         audio: ''
     },
-    c2: {
+    c5: {
         pitch: 12,
         text: 'C',
-        img: './images/notes/PLACEHOLDER/c2.png',
+        img: './images/notes/c4.png',
         audio: ''
     }
 };
