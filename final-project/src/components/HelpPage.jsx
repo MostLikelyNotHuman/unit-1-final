@@ -6,7 +6,6 @@ const HelpPage = () => {
 
     return (
         <>
-            <Header />
             <main className="helpPage-main">
                 <div id="help-content">
                     <h3>About this app</h3>
@@ -95,7 +94,6 @@ const HelpPage = () => {
                     </ul>
                 </div>
             </main>
-            <Footer />
         </>
     );
 };

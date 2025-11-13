@@ -5,7 +5,6 @@ import QuizBox from "./pieces/QuizBox";
 const RhythmPractice = () => {
     return(
         <>
-            <Header />
             <QuizBox 
                 questionText={'Practice - Rhythm'} 
                 questionContent={'*place image*'}
@@ -14,7 +13,6 @@ const RhythmPractice = () => {
                 answer3={'answer 3'}
                 answer4={'answer 4'}
             ></QuizBox>
-            <Footer />
         </>
     );
 };

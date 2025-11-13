@@ -5,7 +5,6 @@ import QuizBox from "./pieces/QuizBox";
 const NotePractice = () => {
     return(
         <>
-            <Header />
             <QuizBox 
                 questionText={'Practice - Notes'} 
                 questionContent={'*place image*'}
@@ -14,7 +13,6 @@ const NotePractice = () => {
                 answer3={'answer 3'}
                 answer4={'answer 4'}
             ></QuizBox>
-            <Footer />
         </>
     );
 };
