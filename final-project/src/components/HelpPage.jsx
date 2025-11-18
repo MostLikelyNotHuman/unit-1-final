@@ -42,7 +42,6 @@ const HelpPage = () => {
                     </ul>
                 </div>
             </main>
-            <Footer />
         </>
     );
 };

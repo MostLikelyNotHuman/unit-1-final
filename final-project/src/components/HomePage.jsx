@@ -32,7 +32,6 @@ const HomePage = () => {
                     </div>
                 </div>
             </main>
-            <Footer />
         </>
     );
 };
