@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import Button from "./Button";
+import './Header.css';
 
 const Header = () => {
 
