@@ -1,13 +1,29 @@
+
+.homePage-main {
+    display: flex;
+    flex-direction: column;
+}
+
 #homepage-intro {
     display: flex;
     flex-direction: column;
-    justify-content: right;
     align-items: center;
+    margin: auto;
+    margin-top: 10px;
 }
 
 #homepage-starting-prompt {
     display: flex;
     flex-direction: column;
-    justify-content: right;
     align-items: center;
+    background-color: aliceblue;
+    width: 80vw;
+    padding-bottom: 20px;
+    margin: auto;
+    margin-bottom: 10px;
+    border-radius: 15px;
+}
+
+#homepage-starting-prompt p {
+    padding: 0px 20px;
 }
