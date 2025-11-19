@@ -7,7 +7,6 @@ import './HomePage.css';
 const HomePage = () => {
     return(
         <>
-            <Header />
             <main className="homePage-main">
                 <div id='homepage-intro'>
                     <h2>Welcome! **Welcome message**</h2>
