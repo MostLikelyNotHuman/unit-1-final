@@ -1,12 +1,12 @@
 import QuizBox from "./pieces/QuizBox";
 import { notes } from "../assets/notes";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const NotePractice = () => {
 
     const [ questionImage, setQuestionImage ] = useState("");
     const [ answers, setAnswers ] = useState([]);
-    let correctAnswer = '';
+    const correctAnswer = useRef('');
 
     const retrieveQuestion = () => {
         let editedNotes = [...notes];
@@ -18,13 +18,13 @@ const NotePractice = () => {
                 console.log(newQuestion);
         editedNotes.splice(correctRNG, 1);
                 console.log(editedNotes);
-        correctAnswer = newQuestion.text;
-                console.log(`correctAnswer: ${correctAnswer}`);
+        correctAnswer.current = newQuestion.text;
+                console.log(`correctAnswer: ${correctAnswer.current}`);
 
-        let answersArray = [correctAnswer];
+        let answersArray = [correctAnswer.current];
                 console.log(answersArray);
-        setQuestionImage(newQuestion.img);
-                console.log(questionImage);
+        // setQuestionImage(newQuestion.img);
+        //         console.log(questionImage);
 
         for (let i = 0; i < 3; i++) {
             let incorrectRNG = Math.floor(Math.random() * editedNotes.length);
@@ -35,24 +35,30 @@ const NotePractice = () => {
                 console.log(answersArray);
             editedNotes.splice(incorrectRNG, 1);
                 console.log(editedNotes);
+                console.log(`correct answer: ${correctAnswer}`);
             }
         answersArray.sort(() => Math.random() - 0.5);
             console.log(answers);
         setAnswers(answersArray);
+            console.log(`correct answer: ${correctAnswer}`);
         
     }
-    const checkAnswer = (selectedAnswer) => {
-        return selectedAnswer === correctAnswer;
-    }
 
+    
     useEffect(() => {
         retrieveQuestion();
     }, [])
+    
+    console.log(`correct answer: ${correctAnswer.current}`);
 
     return(
         <>
             <QuizBox 
-                onClick={checkAnswer}
+                onClick={(e) => {
+                    console.log(e.target.textContent);
+                    console.log(correctAnswer);
+                    console.log(e.target.textContent === correctAnswer.current);
+                }}
                 questionText={'Practice - Notes'} 
                 questionImage={questionImage}
                 answer1={answers[0]}
