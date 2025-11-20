@@ -1,8 +1,9 @@
 import Button from "./Button";
+import Feedback from "./Feedback";
 import HelpButton from "./HelpButton";
 import ToggleSwitch from "./ToggleSwitch";
 
-const QuizBox = ({ questionText, questionImage, answer1, answer2, answer3, answer4, onClick }) => {
+const QuizBox = ({ questionText, questionImage, answer1, answer2, answer3, answer4, questionAnswered, correctCheck, onClick }) => {
 
     return(
         <div id='quizBox'>
@@ -20,6 +21,7 @@ const QuizBox = ({ questionText, questionImage, answer1, answer2, answer3, answe
                 <Button text={answer3} onClick={onClick}></Button>
                 <Button text={answer4} onClick={onClick}></Button>
             </div>
+            <Feedback questionAnswered={questionAnswered} correctCheck={correctCheck}/>
         </div>
     );
 };
