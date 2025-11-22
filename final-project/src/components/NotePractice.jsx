@@ -1,12 +1,13 @@
 import QuizBox from "./pieces/QuizBox";
 import { notes } from "../assets/notes";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, use } from "react";
 
 const NotePractice = () => {
 
     const [ questionImage, setQuestionImage ] = useState("");
     const [ answers, setAnswers ] = useState([]);
     const correctAnswer = useRef('');
+    const [selected, setSelected] = useState(null);
 
     const retrieveQuestion = () => {
         let editedNotes = [...notes];
@@ -61,10 +62,10 @@ const NotePractice = () => {
                 }}
                 questionText={'Practice - Notes'} 
                 questionImage={questionImage}
-                answer1={answers[0]}
-                answer2={answers[1]}
-                answer3={answers[2]}
-                answer4={answers[3]}
+                answers={answers}
+                correctAnswer={correctAnswer.current}
+                selected={selected}
+                onSelect={setSelected}
             ></QuizBox>
         </>
     );

@@ -88,3 +88,11 @@ button {
     height: 40px;
     width: 40px;
 }
+
+#quizBox button.answer-correct {
+    background-color: green;
+}
+
+#quizBox button.answer-incorrect {
+    background-color: red;
+}
