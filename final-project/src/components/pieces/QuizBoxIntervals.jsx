@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import Button from "./Button";
-import HelpButton from "./HelpButton";
-import ToggleSwitch from "./ToggleSwitch";
 
 const QuizBoxIntervals = ({ questionText, questionImage, answers, correctAnswer, selected, onSelect, nextClick }) => {
 
@@ -31,12 +29,12 @@ const QuizBoxIntervals = ({ questionText, questionImage, answers, correctAnswer,
                     )
                 })}
 
-                <div id="question-switches">
+                {/* <div id="question-switches">
                     <ToggleSwitch />
                     <HelpButton />
-                </div>
+                </div> */}
             </div>
-            <div id="next-button">
+            <div id="next-div">
                 <Button onClick={() => {
                     nextClick();
                     setAnswerDisabled(false);

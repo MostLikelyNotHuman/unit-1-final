@@ -1,4 +1,4 @@
-import QuizBox from "./pieces/QuizBox";
+import QuizBox from "./pieces/QuizBoxNotes";
 import { intervals } from "../assets/intervals";
 import { notes } from "../assets/notes";
 import { useEffect, useRef, useState } from "react";
@@ -46,6 +46,7 @@ const IntervalPractice = () => {
                 // console.log(images);
 
         let editedIntervals = [...intervals];
+        editedIntervals.splice(0, 1);    
         for (let i = 0; i < editedIntervals.length; i++) {
             // console.log(editedIntervals[i]);
             if (editedIntervals[i].size === correctValue) {
