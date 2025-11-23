@@ -3,11 +3,11 @@ import Button from "./Button";
 import HelpButton from "./HelpButton";
 import ToggleSwitch from "./ToggleSwitch";
 
-const QuizBox = ({ questionText, questionImage, answers, correctAnswer, selected, onSelect, onClick }) => {
+const QuizBox = ({ questionText, questionImage, answers, correctAnswer, selected, onSelect, nextClick }) => {
 
-    console.log(correctAnswer);
-    console.log(answers);
-
+    const [ answerDisabled, setAnswerDisabled ] = useState(false);
+    const [ nextDisabled, setNextDisabled ] = useState(true);
+    const [ nextId, setNextId ] = useState('next-button-disabled');
 
     return(
         <div id='quizBox'>
@@ -18,6 +18,18 @@ const QuizBox = ({ questionText, questionImage, answers, correctAnswer, selected
                     <ToggleSwitch />
                     <HelpButton />
                 </div>
+            </div>
+            <div id="next-button">
+                <Button onClick={() => {
+                    nextClick();
+                    setAnswerDisabled(false);
+                    setNextDisabled(true);
+                    setNextId('next-button-disabled')
+                    }
+                 }
+                id={nextId}
+                disabled={nextDisabled}
+                text={"New Question ->"}></Button>
             </div>
             <div id="question-answers">
                {answers.map((a) => {
@@ -32,7 +44,14 @@ const QuizBox = ({ questionText, questionImage, answers, correctAnswer, selected
                         <button
                             key={a}
                             className={className}
-                            onClick={() => onSelect(a)}
+                            disabled={answerDisabled}
+                            onClick={() => {
+                                onSelect(a);
+                                setAnswerDisabled(true);
+                                setNextDisabled(false);
+                                setNextId('next-button')
+                                }
+                            }
                         >
                             {a}
                         </button>
