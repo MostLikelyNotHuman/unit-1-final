@@ -33,42 +33,32 @@ button {
     display: flex;
     flex-direction: row;
     padding: 20px;
-    position: absolute;
-    top: 90px;
-    height: 140px;
-    width: 160px;
     border-radius: 10px;
+    height: 150px;
+    width: 150px;
 }
 
 #question-content img {
     display: flex;
     height: 150px;
     width: 150px;
-    position: absolute;
-    top: 90px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 10px;
+    background-color: rgba(255, 255, 255, 0);
     border-radius: 10px;
 }
 
-#question-content #image1 {
-    background-color: rgba(255, 255, 255, 0);
-}
-
+#question-content #image1, 
 #question-content #image2 {
-    background-color: rgba(255, 255, 255, 0);
+    position: absolute;
 }
 
 #quizBox #question-content #image1-offset {
-    background-color: rgba(0, 0, 0, 0);
-    left: 57%;
+    position: absolute;
+    left: 41.75%;
 }
 
 #quizBox #question-content #image2-offset {
-    background-color: rgba(255, 255, 255, 0);
-    left: 43%;
+    position: absolute;
+    left: 39.25%;
 }
 
 #question-answers {
@@ -108,7 +98,7 @@ button {
 }
 
 #quizBox #next-div button {
-    height: 50px;
+    height: 40px;
     font-size: 20px;
     max-width: 100px;
 }
@@ -141,7 +131,6 @@ button {
     
     #question-answers {
         width: 60vw;
-
     }
 
     #next-div {
@@ -169,7 +158,32 @@ button {
 
     #next-div {
         width: 75vw;
-        top: 300px;
+        top: 310px;
     }
+}
+
+@media (max-height: 900px) {
+
+    #question-answers button {
+        margin: 8px;
+    }
+
+    #question-content {
+        display: flex;
+        height: 125px;
+        width: 125px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+    }
+
+    #question-content img {
+        display: flex;
+        height: 125px;
+        width: 125px;
+        background-color: rgba(255, 255, 255, 0);
+        border-radius: 10px;
+}
+
+
 }
 
