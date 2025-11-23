@@ -33,15 +33,21 @@ button {
     display: flex;
     flex-direction: row;
     padding: 20px;
-    border-radius: 10px;
+    position: absolute;
+    top: 90px;
     height: 150px;
     width: 150px;
+    border-radius: 10px;
 }
 
 #question-content img {
     display: flex;
     height: 150px;
     width: 150px;
+    position: absolute;
+    top: 90px;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: rgba(255, 255, 255, 0);
     border-radius: 10px;
 }
@@ -53,12 +59,12 @@ button {
 
 #quizBox #question-content #image1-offset {
     position: absolute;
-    left: 41.75%;
+    left: 56.5%;
 }
 
 #quizBox #question-content #image2-offset {
     position: absolute;
-    left: 39.25%;
+    left: 43.5%;
 }
 
 #question-answers {
