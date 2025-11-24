@@ -38,7 +38,7 @@ const HelpPage = () => {
                             who is a complete beginner to music, and aims to teach you the very basics of 
                             reading notes and rhythm. Located on the top bar or the home page are links 
                             to a variety of exercises to strengthen your reading skills. Currently, 
-                            you can find exercises to test your ability to recognize notes, intervals, and rhythms.</p>
+                            you can find exercises to test your ability to recognize notes and intervals.</p>
                         <p> The goal is that you take the skills you learn here and go on to:</p>
                         <ul>
                             <li>Read your favorite music!</li>

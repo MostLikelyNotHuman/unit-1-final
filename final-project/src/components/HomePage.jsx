@@ -6,9 +6,12 @@ const HomePage = () => {
     return (
         <main className="homePage-main">
             <div id='homepage-intro'>
-                <h2>Welcome! **Welcome message**</h2>
-                <p>**Introduction paragraph**</p>
-                <p>**App explanation, whatever**</p>
+                <h2>Welcome to Music For Beginners!</h2>
+                <p>Music For Beginners is an app designed to teach you the very basics 
+                    of reading music. Here you'll find exercises to strengthen your ability 
+                    to identify notes and intervals on the staff, with the goal of creating a solid 
+                    foundation of skills for you to build on in the future!
+                </p>
             </div>
             <div className='horizontal-divider'></div>
             <div id='homepage-starting-prompt'>

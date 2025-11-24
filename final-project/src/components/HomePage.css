@@ -12,6 +12,10 @@
     margin-top: 10px;
 }
 
+#homepage-intro p {
+    padding: 0 40px;
+}
+
 #homepage-starting-prompt {
     display: flex;
     flex-direction: column;
