@@ -9,7 +9,7 @@ const QuizBoxIntervals = ({ questionText, questionImage, answers, correctAnswer,
     const [ nextId, setNextId ] = useState('next-button-disabled');
     const [ stylingId, setStylingId ] = useState([]);
 
-    useEffect(() => {
+    useEffect(() => { //Orders the images in the second intervals so the lower one is always on the left
         if (correctAnswer === 'Major Second' || correctAnswer === 'Minor Second') {
             setStylingId(['image1-offset', 'image2-offset']);
         } else {
@@ -21,7 +21,7 @@ const QuizBoxIntervals = ({ questionText, questionImage, answers, correctAnswer,
         <div id='quizBox'>
             <h4>{questionText}</h4>
             <div id="question-content">
-                {questionImage.map((image, i) => {
+                {questionImage.map((image, i) => { //Maps two images
                     return (
                         <img src={image} key={i} id={stylingId[i]}></img>
                     )
@@ -36,10 +36,10 @@ const QuizBoxIntervals = ({ questionText, questionImage, answers, correctAnswer,
                 }}
                 id={nextId}
                 disabled={nextDisabled}
-                text={"New Question ->"}></Button>
+                text={"New Question ->"}/>
             </div>
             <div id="question-answers">
-               {answers.map((a) => {
+               {answers.map((a) => { //Maps four answers, adds styling for correct and incorrect answers once clicked on
                     let className = "answer";
 
                     if (selected) {
@@ -48,8 +48,9 @@ const QuizBoxIntervals = ({ questionText, questionImage, answers, correctAnswer,
                     }
 
                     return (
-                        <button
+                        <Button
                             key={a}
+                            text={a}
                             className={className}
                             disabled={answerDisabled}
                             onClick={() => {
@@ -59,8 +60,7 @@ const QuizBoxIntervals = ({ questionText, questionImage, answers, correctAnswer,
                                 setNextId('next-button')
                                 }
                             }
-                        > {a}
-                        </button>
+                        />
                     );
                 })}
             </div>

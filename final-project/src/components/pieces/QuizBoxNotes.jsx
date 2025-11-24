@@ -23,10 +23,10 @@ const QuizBoxNotes = ({ questionText, questionImage, answers, correctAnswer, sel
                 }}
                 id={nextId}
                 disabled={nextDisabled}
-                text={"New Question ->"}></Button>
+                text={"New Question ->"}/>
             </div>
             <div id="question-answers">
-               {answers.map((a) => {
+               {answers.map((a) => { //Maps four answers, adds styling for correct and incorrect answers once clicked on 
                     let className = "answer";
 
                     if (selected) {
@@ -35,8 +35,9 @@ const QuizBoxNotes = ({ questionText, questionImage, answers, correctAnswer, sel
                     }
 
                     return (
-                        <button
+                        <Button
                             key={a}
+                            text={a}
                             className={className}
                             disabled={answerDisabled}
                             onClick={() => {
@@ -46,8 +47,7 @@ const QuizBoxNotes = ({ questionText, questionImage, answers, correctAnswer, sel
                                 setNextId('next-button')
                                 }
                             }
-                        > {a}
-                        </button>
+                        />
                     );
                 })}
             </div>
