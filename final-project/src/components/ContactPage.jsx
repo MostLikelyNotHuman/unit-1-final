@@ -1,8 +1,6 @@
 import { useState } from "react";
-import './ContactPage.css';
+import "./ContactPage.css";
 import Button from "./pieces/Button";
-
-
 
 const ContactPage = () => {
 
@@ -11,19 +9,17 @@ const ContactPage = () => {
     const [ feedbackType, setFeedbackType ] = useState('');
     const [ error, setError ] = useState('');
     const [ feedback, setFeedback ] = useState('');
-    const [ feedbackSubmitted, setFeedbackSubmitted ] = useState(false);
+    const [ isFeedbackSubmitted, setIsFeedbackSubmitted ] = useState(false);
     const [ isSending, setIsSending ] = useState(false);
-
-
 
     const handleChange = (field, value) => {
         field(value);
     }
     
-    const emailValidation = /^\S+@\S+\.\S+$/;
+    const emailValidation = /^\S+@\S+\.\S+$/; //Super simple regex for email format
     
     const verifyInput = () => {
-        console.log(emailValidation.test(email));
+        setIsFeedbackSubmitted(false);
         if (!name) {
             return setError('Please enter your name.')
         } else if (!emailValidation.test(email)) {
@@ -33,15 +29,20 @@ const ContactPage = () => {
         } else if (feedback.length < 25) {
             return setError('Please enter at least 25 characters of feedback.')
         }
-        setError('');
+
         confirmSubmission();
     }
 
-    const confirmSubmission = () => {
+    const confirmSubmission = () => { //Simulation of sending the data to a server
         setIsSending(true);
         setTimeout(() => {
             setIsSending(false);
-            setFeedbackSubmitted(true);
+            setIsFeedbackSubmitted(true);
+            setError('');
+            setName('');
+            setEmail('');
+            setFeedbackType('');
+            setFeedback('')
         }, "2000");
     }
 
@@ -82,7 +83,8 @@ const ContactPage = () => {
                         </select>
                     <label htmlFor="text-area">Feedback:</label>
                         <textarea 
-                            id="text-area" 
+                            id="text-area"
+                            value={feedback}
                             required
                             placeholder="Please enter at least 25 characters..."
                             onChange={(e) => handleChange(setFeedback, e.target.value)}>
@@ -94,20 +96,20 @@ const ContactPage = () => {
                     onClick={(e) => {
                         e.preventDefault();
                         verifyInput();
-                        }
-                    } />
+                    }} />
             </form>
-            <div id="feedback-result">
+            <div id="feedback-result"> 
                 {error && 
-                    <div id="error-message">
+                    <div id="error-message"> 
                         <p>{error}</p>
                     </div>
                 }
                 {isSending &&
                     <div>
                         <p>Sending...</p>    
-                    </div>}
-                {feedbackSubmitted && !isSending &&
+                    </div>
+                }
+                {isFeedbackSubmitted && !isSending &&
                     <div id="feedback-confirmation">
                         <p>Thank you for your feedback! I'll get back to you as soon as possible!
                         </p>

@@ -104,11 +104,6 @@
     background-color: rgb(197, 197, 197);
 }
 
-#quizBox #question-content #question-switches button {
-    height: 40px;
-    width: 40px;
-}
-
 #quizBox button.answer-correct {
     background-color: rgb(58, 220, 58);
 }
@@ -134,9 +129,6 @@
     100% {transform: scale(.95);}
 }
 
-
-
-
 @media (max-width: 1250px) {
     #quizBox {
         width: 75vw;
@@ -144,13 +136,11 @@
     
     #question-answers {
         width: 60vw;
-
     }
 
     #next-div {
         width: 60vw;
     }
-
 }
 
 @media (max-width: 750px) {
