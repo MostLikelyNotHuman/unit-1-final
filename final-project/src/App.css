@@ -17,7 +17,7 @@ button {
     align-items: center;
     background-color: rgb(226, 237, 255);
     width: 65vw;
-    height: 60vh;
+    height: 75vh;
     padding-bottom: 20px;
     margin: 10px auto;
     border-radius: 15px;
@@ -44,6 +44,9 @@ button {
     top: 180px;
     left: 50%;
     transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 #question-switches {
@@ -57,12 +60,12 @@ button {
 
 #question-answers {
     display: flex;
-    flex: 1;
+    flex: 1 10;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-end;
     position: absolute;
-    width: 600px;
+    width: 50vw;
     bottom: 50px;
 
 }
@@ -80,11 +83,35 @@ button {
     border-width: 0px;
 }
 
+#quizBox #next-button button {
+    display: flex;
+    position: absolute;
+    top: 290px;
+    right: 12px;
+    width: 150px;
+    height: 40px;
+    font-size: 16px;
+    justify-content: center;
+    align-items: center;
+}
+
 #quizBox button:hover {
-    background-color: rgb(151, 151, 151);
+    background-color: rgb(197, 197, 197);
 }
 
 #quizBox #question-content #question-switches button {
     height: 40px;
     width: 40px;
+}
+
+#quizBox button.answer-correct {
+    background-color: rgb(58, 220, 58);
+}
+
+#quizBox button.answer-incorrect {
+    background-color: rgb(183, 107, 107);
+}
+
+#next-button #next-button-disabled {
+    background-color: rgb(197, 197, 197);
 }

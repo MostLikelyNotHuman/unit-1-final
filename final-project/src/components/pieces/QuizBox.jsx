@@ -1,8 +1,13 @@
+import { useState } from "react";
 import Button from "./Button";
 import HelpButton from "./HelpButton";
 import ToggleSwitch from "./ToggleSwitch";
 
-const QuizBox = ({ questionText, questionImage, answer1, answer2, answer3, answer4, onClick }) => {
+const QuizBox = ({ questionText, questionImage, answers, correctAnswer, selected, onSelect, nextClick }) => {
+
+    const [ answerDisabled, setAnswerDisabled ] = useState(false);
+    const [ nextDisabled, setNextDisabled ] = useState(true);
+    const [ nextId, setNextId ] = useState('next-button-disabled');
 
     return(
         <div id='quizBox'>
@@ -14,11 +19,44 @@ const QuizBox = ({ questionText, questionImage, answer1, answer2, answer3, answe
                     <HelpButton />
                 </div>
             </div>
+            <div id="next-button">
+                <Button onClick={() => {
+                    nextClick();
+                    setAnswerDisabled(false);
+                    setNextDisabled(true);
+                    setNextId('next-button-disabled')
+                    }
+                 }
+                id={nextId}
+                disabled={nextDisabled}
+                text={"New Question ->"}></Button>
+            </div>
             <div id="question-answers">
-                <Button text={answer1} onClick={onClick}></Button>
-                <Button text={answer2} onClick={onClick}></Button>
-                <Button text={answer3} onClick={onClick}></Button>
-                <Button text={answer4} onClick={onClick}></Button>
+               {answers.map((a) => {
+                    let className = "answer";
+
+                    if (selected) {
+                        if (a === correctAnswer) className += "-correct";
+                        else if (a === selected) className += "-incorrect";
+                    }
+
+                    return (
+                        <button
+                            key={a}
+                            className={className}
+                            disabled={answerDisabled}
+                            onClick={() => {
+                                onSelect(a);
+                                setAnswerDisabled(true);
+                                setNextDisabled(false);
+                                setNextId('next-button')
+                                }
+                            }
+                        >
+                            {a}
+                        </button>
+                    );
+                })}
             </div>
         </div>
     );

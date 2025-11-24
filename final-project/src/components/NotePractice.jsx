@@ -2,11 +2,14 @@ import QuizBox from "./pieces/QuizBox";
 import { notes } from "../assets/notes";
 import { useEffect, useState, useRef } from "react";
 
+
 const NotePractice = () => {
 
     const [ questionImage, setQuestionImage ] = useState("");
     const [ answers, setAnswers ] = useState([]);
     const correctAnswer = useRef('');
+    const [selected, setSelected] = useState(null);
+    const [ answerDisabled, setAnswerDisabled ] = useState(false);
 
     const retrieveQuestion = () => {
         let editedNotes = [...notes];
@@ -23,8 +26,8 @@ const NotePractice = () => {
 
         let answersArray = [correctAnswer.current];
                 console.log(answersArray);
-        // setQuestionImage(newQuestion.img);
-        //         console.log(questionImage);
+        setQuestionImage(newQuestion.img);
+                console.log(questionImage);
 
         for (let i = 0; i < 3; i++) {
             let incorrectRNG = Math.floor(Math.random() * editedNotes.length);
@@ -61,10 +64,17 @@ const NotePractice = () => {
                 }}
                 questionText={'Practice - Notes'} 
                 questionImage={questionImage}
-                answer1={answers[0]}
-                answer2={answers[1]}
-                answer3={answers[2]}
-                answer4={answers[3]}
+                answers={answers}
+                correctAnswer={correctAnswer.current}
+                selected={selected}
+                onSelect={setSelected}
+                answerDisabled={answerDisabled}
+                nextClick={() => {
+                    setSelected(null);
+                    retrieveQuestion();
+                    setAnswerDisabled(false)
+                    }
+                }
             ></QuizBox>
         </>
     );
