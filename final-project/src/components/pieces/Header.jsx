@@ -17,6 +17,9 @@ const Header = () => {
                 <Link to={"/help"}>
                     <Button text={'Help'}/>
                 </Link>
+                <Link to={"/contact"}>
+                    <Button text={'Contact'}/>
+                </Link>
             </div>
         </header>
     );
