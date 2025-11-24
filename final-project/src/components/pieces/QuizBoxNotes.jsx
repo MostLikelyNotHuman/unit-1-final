@@ -13,10 +13,6 @@ const QuizBoxNotes = ({ questionText, questionImage, answers, correctAnswer, sel
             <h4>{questionText}</h4>
             <div id="question-content">
                 <img src={questionImage}></img>
-                {/* <div id="question-switches">
-                    <ToggleSwitch />
-                    <HelpButton />
-                </div> */}
             </div>
             <div id="next-div">
                 <Button onClick={() => {
@@ -24,8 +20,7 @@ const QuizBoxNotes = ({ questionText, questionImage, answers, correctAnswer, sel
                     setAnswerDisabled(false);
                     setNextDisabled(true);
                     setNextId('next-button-disabled')
-                    }
-                 }
+                }}
                 id={nextId}
                 disabled={nextDisabled}
                 text={"New Question ->"}></Button>
@@ -51,8 +46,7 @@ const QuizBoxNotes = ({ questionText, questionImage, answers, correctAnswer, sel
                                 setNextId('next-button')
                                 }
                             }
-                        >
-                            {a}
+                        > {a}
                         </button>
                     );
                 })}

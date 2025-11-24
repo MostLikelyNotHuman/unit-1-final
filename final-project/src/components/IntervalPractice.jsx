@@ -1,4 +1,3 @@
-import QuizBox from "./pieces/QuizBoxNotes";
 import { intervals } from "../assets/intervals";
 import { notes } from "../assets/notes";
 import { useEffect, useRef, useState } from "react";
@@ -13,12 +12,6 @@ const IntervalPractice = () => {
     const [ answerDisabled, setAnswerDisabled ] = useState(false);
 
     const retrieveQuestion = () => {
-        // let editedIntervals = [...intervals];
-        //         console.log(editedIntervals)
-        // const correctRNG = Math.floor(Math.random() * editedIntervals.length);
-        //         console.log(`correctrng: ${correctRNG}`);
-        // const newQuestion = editedIntervals[correctRNG];
-        //         console.log(newQuestion);
 
         let editedNotes = [...notes];
         let valueCompare = [];
@@ -29,11 +22,8 @@ const IntervalPractice = () => {
 
         for (let i = 0; i < 2; i++) {
             const correctRNG = Math.floor(Math.random() * editedNotes.length);
-                    // console.log(`correctrng: ${correctRNG}`);
             const newNote = editedNotes[correctRNG];
-                    // console.log(newNote);
             editedNotes.splice(correctRNG, 1);
-                    // console.log(editedNotes); 
             valueCompare.push(newNote);
             images.push(newNote.img);
         }
@@ -42,14 +32,10 @@ const IntervalPractice = () => {
         }
         setQuestionImage(images);
         correctValue = Math.abs(valueCompare[0].pitch - valueCompare[1].pitch);
-                // console.log(valueCompare);
-                // console.log(correctValue);
-                // console.log(images);
 
         let editedIntervals = [...intervals];
         editedIntervals.splice(0, 1);    
         for (let i = 0; i < editedIntervals.length && !correctAnswer.current; i++) {
-            // console.log(editedIntervals[i]);
             if (editedIntervals[i].size === correctValue) {
                 answersArray.push(editedIntervals[i].name)
                 correctAnswer.current = editedIntervals[i].name;
@@ -57,32 +43,21 @@ const IntervalPractice = () => {
             }
         }
         
-        // console.log(answersArray);
-
         for (let i = 0; i < 3; i++) {
             let incorrectRNG = Math.floor(Math.random() * editedNotes.length);
-                // console.log(`incorrectrng: ${incorrectRNG}`);
             let incorrectAnswer = editedIntervals[incorrectRNG];
-                // console.log(incorrectAnswer);
             answersArray.push(incorrectAnswer.name);            
-                // console.log(answersArray);
             editedIntervals.splice(incorrectRNG, 1);
-                // console.log(editedIntervals);
             }
         answersArray.sort(() => Math.random() - 0.5);
-            // console.log(answers);
-        setAnswers(answersArray);
-            // console.log(`correct answer: ${correctAnswer}`);
-        
+        setAnswers(answersArray);        
     }
     
     useEffect(() => {
         retrieveQuestion();
     }, [])
 
-    // console.log(questionImage);
-
-    return(
+    return (
         <main className="intervalPracticeMain">
             <QuizBoxIntervals 
                 questionText={'Practice - Intervals'} 
@@ -96,9 +71,8 @@ const IntervalPractice = () => {
                     setSelected(null);
                     retrieveQuestion();
                     setAnswerDisabled(false)
-                    }
-                }
-            ></QuizBoxIntervals>
+                }}
+            />
         </main>
     );
 };

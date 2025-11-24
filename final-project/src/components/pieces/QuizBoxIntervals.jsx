@@ -8,9 +8,6 @@ const QuizBoxIntervals = ({ questionText, questionImage, answers, correctAnswer,
     const [ nextDisabled, setNextDisabled ] = useState(true);
     const [ nextId, setNextId ] = useState('next-button-disabled');
     const [ stylingId, setStylingId ] = useState([]);
-    console.log(questionImage);
-    console.log(correctAnswer);
-    console.log(correctAnswer);
 
     useEffect(() => {
         if (correctAnswer === 'Major Second' || correctAnswer === 'Minor Second') {
@@ -20,20 +17,15 @@ const QuizBoxIntervals = ({ questionText, questionImage, answers, correctAnswer,
         }
     }, [correctAnswer])
 
-    return(
+    return (
         <div id='quizBox'>
             <h4>{questionText}</h4>
             <div id="question-content">
                 {questionImage.map((image, i) => {
                     return (
                         <img src={image} key={i} id={stylingId[i]}></img>
-                       )
-                    })}
-
-                {/* <div id="question-switches">
-                    <ToggleSwitch />
-                    <HelpButton />
-                </div> */}
+                    )
+                })}
             </div>
             <div id="next-div">
                 <Button onClick={() => {
@@ -41,8 +33,7 @@ const QuizBoxIntervals = ({ questionText, questionImage, answers, correctAnswer,
                     setAnswerDisabled(false);
                     setNextDisabled(true);
                     setNextId('next-button-disabled')
-                    }
-                 }
+                }}
                 id={nextId}
                 disabled={nextDisabled}
                 text={"New Question ->"}></Button>
@@ -68,8 +59,7 @@ const QuizBoxIntervals = ({ questionText, questionImage, answers, correctAnswer,
                                 setNextId('next-button')
                                 }
                             }
-                        >
-                            {a}
+                        > {a}
                         </button>
                     );
                 })}

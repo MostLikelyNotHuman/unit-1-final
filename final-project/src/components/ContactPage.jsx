@@ -2,8 +2,6 @@ import { useState } from "react";
 import './ContactPage.css';
 import Button from "./pieces/Button";
 
-
-
 const ContactPage = () => {
 
     const [ name, setName ] = useState('');
@@ -14,8 +12,6 @@ const ContactPage = () => {
     const [ feedbackSubmitted, setFeedbackSubmitted ] = useState(false);
     const [ isSending, setIsSending ] = useState(false);
 
-
-
     const handleChange = (field, value) => {
         field(value);
     }
@@ -23,7 +19,6 @@ const ContactPage = () => {
     const emailValidation = /^\S+@\S+\.\S+$/;
     
     const verifyInput = () => {
-        console.log(emailValidation.test(email));
         if (!name) {
             return setError('Please enter your name.')
         } else if (!emailValidation.test(email)) {
@@ -94,8 +89,7 @@ const ContactPage = () => {
                     onClick={(e) => {
                         e.preventDefault();
                         verifyInput();
-                        }
-                    } />
+                    }} />
             </form>
             <div id="feedback-result">
                 {error && 
@@ -106,7 +100,8 @@ const ContactPage = () => {
                 {isSending &&
                     <div>
                         <p>Sending...</p>    
-                    </div>}
+                    </div>
+                }
                 {feedbackSubmitted && !isSending &&
                     <div id="feedback-confirmation">
                         <p>Thank you for your feedback! I'll get back to you as soon as possible!
