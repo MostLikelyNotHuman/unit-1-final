@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Button from "./Button";
 import './QuizBoxNew.css';
+import QuizBox from "./QuizBox";
 
 const QuizBoxIntervals = ({ questionText, questionImage, answers, correctAnswer, selected, onSelect, nextClick }) => {
 
@@ -18,28 +19,30 @@ const QuizBoxIntervals = ({ questionText, questionImage, answers, correctAnswer,
     }, [correctAnswer])
 
     return (
-        <div id='quizBox'>
-            <h4>{questionText}</h4>
-            <div id="question-content">
-                {questionImage.map((image, i) => {
+        <QuizBox 
+            questionText={questionText}
+            questionImage={   
+                questionImage.map((image, i) => {
                     return (
                         <img src={image} key={i} id={stylingId[i]}></img>
                     )
-                })}
-            </div>
-            <div id="next-div">
-                <Button onClick={() => {
-                    nextClick();
-                    setAnswerDisabled(false);
-                    setNextDisabled(true);
-                    setNextId('next-button-disabled')
-                }}
-                id={nextId}
-                disabled={nextDisabled}
-                text={"New Question ->"}></Button>
-            </div>
-            <div id="question-answers">
-               {answers.map((a) => {
+                })
+            }
+            nextButton={
+                <Button 
+                    onClick={() => {
+                        nextClick();
+                        setAnswerDisabled(false);
+                        setNextDisabled(true);
+                        setNextId('next-button-disabled')
+                    }}
+                    id={nextId}
+                    disabled={nextDisabled}
+                    text={"New Question ->"}
+                />
+            }
+            questionAnswers={
+                answers.map((a) => {
                     let className = "answer";
 
                     if (selected) {
@@ -48,8 +51,9 @@ const QuizBoxIntervals = ({ questionText, questionImage, answers, correctAnswer,
                     }
 
                     return (
-                        <button
+                        <Button
                             key={a}
+                            text={a}
                             className={className}
                             disabled={answerDisabled}
                             onClick={() => {
@@ -57,15 +61,13 @@ const QuizBoxIntervals = ({ questionText, questionImage, answers, correctAnswer,
                                 setAnswerDisabled(true);
                                 setNextDisabled(false);
                                 setNextId('next-button')
-                                }
-                            }
-                        > {a}
-                        </button>
+                            }}
+                        />                    
                     );
-                })}
-            </div>
-        </div>
+                })
+            }  
+        />
     );
-};
+}
 
 export default QuizBoxIntervals;

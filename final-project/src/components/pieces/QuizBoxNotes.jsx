@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "./Button";
 import './QuizBoxNew.css'
+import QuizBox from "./QuizBox";
 
 const QuizBoxNotes = ({ questionText, questionImage, answers, correctAnswer, selected, onSelect, nextClick }) => {
 
@@ -8,13 +9,11 @@ const QuizBoxNotes = ({ questionText, questionImage, answers, correctAnswer, sel
     const [ nextDisabled, setNextDisabled ] = useState(true);
     const [ nextId, setNextId ] = useState('next-button-disabled');
 
-    return(
-        <div id='quizBox'>
-            <h4>{questionText}</h4>
-            <div id="question-content">
-                <img src={questionImage}></img>
-            </div>
-            <div id="next-div">
+    return (
+        <QuizBox 
+            questionText={questionText}
+            questionImage={<img src={questionImage}></img>}
+            nextButton={
                 <Button onClick={() => {
                     nextClick();
                     setAnswerDisabled(false);
@@ -24,9 +23,9 @@ const QuizBoxNotes = ({ questionText, questionImage, answers, correctAnswer, sel
                 id={nextId}
                 disabled={nextDisabled}
                 text={"New Question ->"}></Button>
-            </div>
-            <div id="question-answers">
-               {answers.map((a) => {
+            }
+            questionAnswers={
+                answers.map((a) => {
                     let className = "answer";
 
                     if (selected) {
@@ -49,10 +48,10 @@ const QuizBoxNotes = ({ questionText, questionImage, answers, correctAnswer, sel
                         > {a}
                         </button>
                     );
-                })}
-            </div>
-        </div>
-    );
+                })
+            }
+        />
+    )
 };
 
 export default QuizBoxNotes;
