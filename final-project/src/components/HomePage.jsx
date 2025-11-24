@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import Button from "./pieces/Button";
 import './HomePage.css';
+import Divider from "./pieces/Divider";
 
 const HomePage = () => {
     return (
@@ -13,7 +14,7 @@ const HomePage = () => {
                     foundation of skills for you to build on in the future!
                 </p>
             </div>
-            <div className='horizontal-divider'></div>
+            <Divider />
             <div id='homepage-starting-prompt'>
                 <h3>Ready to get started?</h3>
                 <p>Select any of the practices below</p>

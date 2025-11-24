@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./ContactPage.css";
 import Button from "./pieces/Button";
+import Divider from "./pieces/Divider";
 
 const ContactPage = () => {
 
@@ -51,6 +52,7 @@ const ContactPage = () => {
             <h3>Contact Form</h3>
             <p>Want to provide feedback? Report a bug or error? Just say hello?
                 Fill out the form below and I'll get back to you as soon as possible.</p>
+            <Divider />
             <form id="contact-form">
                 <fieldset>
                     <legend>Your Information</legend>
