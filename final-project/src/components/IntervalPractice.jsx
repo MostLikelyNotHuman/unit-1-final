@@ -25,6 +25,7 @@ const IntervalPractice = () => {
         let correctValue;
         let images = [];
         let answersArray = [];
+        correctAnswer.current = '';
 
         for (let i = 0; i < 2; i++) {
             const correctRNG = Math.floor(Math.random() * editedNotes.length);
@@ -47,7 +48,7 @@ const IntervalPractice = () => {
 
         let editedIntervals = [...intervals];
         editedIntervals.splice(0, 1);    
-        for (let i = 0; i < editedIntervals.length; i++) {
+        for (let i = 0; i < editedIntervals.length && !correctAnswer.current; i++) {
             // console.log(editedIntervals[i]);
             if (editedIntervals[i].size === correctValue) {
                 answersArray.push(editedIntervals[i].name)

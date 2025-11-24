@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Button from "./Button";
+import './QuizBoxNew.css'
 
 const QuizBoxNotes = ({ questionText, questionImage, answers, correctAnswer, selected, onSelect, nextClick }) => {
 

@@ -1,7 +1,5 @@
 import { Link } from "react-router";
 import Button from "./pieces/Button";
-import Footer from "./pieces/Footer";
-import Header from "./pieces/Header";
 import './HomePage.css';
 
 const HomePage = () => {
@@ -13,7 +11,7 @@ const HomePage = () => {
                     <p>**Introduction paragraph**</p>
                     <p>**App explanation, whatever**</p>
                 </div>
-                <div class='horizontal-divider'></div>
+                <div className='horizontal-divider'></div>
                 <div id='homepage-starting-prompt'>
                     <h3>Ready to get started?</h3>
                     <p>Select any of the practices below</p>

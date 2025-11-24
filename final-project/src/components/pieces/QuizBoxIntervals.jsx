@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Button from "./Button";
+import './QuizBoxNew.css';
 
 const QuizBoxIntervals = ({ questionText, questionImage, answers, correctAnswer, selected, onSelect, nextClick }) => {
 
@@ -26,8 +27,8 @@ const QuizBoxIntervals = ({ questionText, questionImage, answers, correctAnswer,
                 {questionImage.map((image, i) => {
                     return (
                         <img src={image} key={i} id={stylingId[i]}></img>
-                    )
-                })}
+                       )
+                    })}
 
                 {/* <div id="question-switches">
                     <ToggleSwitch />

@@ -1,11 +1,11 @@
-import c4 from '../assets/images/notes/c4.png'
-import d4 from '../assets/images/notes/d4.png'
-import e4 from '../assets/images/notes/e4.png'
-import f4 from '../assets/images/notes/f4.png'
-import g4 from '../assets/images/notes/g4.png'
-import a4 from '../assets/images/notes/a4.png'
-import b4 from '../assets/images/notes/b4.png'
-import c5 from '../assets/images/notes/c5.png'
+import c4 from '../assets/images/notes/c4.webp'
+import d4 from '../assets/images/notes/d4.webp'
+import e4 from '../assets/images/notes/e4.webp'
+import f4 from '../assets/images/notes/f4.webp'
+import g4 from '../assets/images/notes/g4.webp'
+import a4 from '../assets/images/notes/a4.webp'
+import b4 from '../assets/images/notes/b4.webp'
+import c5 from '../assets/images/notes/c5.webp'
 
 export const notes = [
     {
