@@ -1,11 +1,15 @@
 header {
     display: flex;
     background-color: rgb(206, 221, 255);
+    height: 80px;
 }
 
 #logo {
+    display: flex;
     flex: 1;
     margin-left: 20px;
+    align-items: center;
+
 }
 
 #header-nav-links {
