@@ -83,7 +83,7 @@ const IntervalPractice = () => {
     // console.log(questionImage);
 
     return(
-        <>
+        <main className="intervalPracticeMain">
             <QuizBoxIntervals 
                 questionText={'Practice - Intervals'} 
                 questionImage={questionImage}
@@ -99,7 +99,7 @@ const IntervalPractice = () => {
                     }
                 }
             ></QuizBoxIntervals>
-        </>
+        </main>
     );
 };
 

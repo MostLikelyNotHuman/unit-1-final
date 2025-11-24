@@ -1,0 +1,16 @@
+.contactPage-main {
+    padding: 20px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form fieldset {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 20px;
+}

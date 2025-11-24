@@ -6,6 +6,7 @@ import IntervalPractice from './components/IntervalPractice';
 import NotePractice from './components/NotePractice';
 import Header from './components/pieces/Header';
 import Footer from './components/pieces/Footer';
+import ContactPage from './components/ContactPage';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/practice-notes" element={<NotePractice />} />
         <Route path="/practice-intervals" element={<IntervalPractice />} />
         <Route path="/help" element={<HelpPage />} />
+        <Route path="/contact" element={<ContactPage />} />
       </Routes>
       <Footer />
     </>

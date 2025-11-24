@@ -14,15 +14,15 @@ const NotePractice = () => {
     const retrieveQuestion = () => {
         let editedNotes = [...notes];
         editedNotes.splice((editedNotes.length-1), 1);
-                console.log(editedNotes);
+                // console.log(editedNotes);
         const correctRNG = Math.floor(Math.random() * editedNotes.length);
-                console.log(`correctrng: ${correctRNG}`);
+                // console.log(`correctrng: ${correctRNG}`);
         const newQuestion = editedNotes[correctRNG];
-                console.log(newQuestion);
+                // console.log(newQuestion);
         editedNotes.splice(correctRNG, 1);
-                console.log(editedNotes);
+                // console.log(editedNotes);
         correctAnswer.current = newQuestion.text;
-                console.log(`correctAnswer: ${correctAnswer.current}`);
+                // console.log(`correctAnswer: ${correctAnswer.current}`);
 
         let answersArray = [correctAnswer.current];
                 console.log(answersArray);
@@ -55,7 +55,7 @@ const NotePractice = () => {
     console.log(`correct answer: ${correctAnswer.current}`);
 
     return(
-        <>
+        <main className="notePracticeMain">
             <QuizBox 
                 onClick={(e) => {
                     console.log(e.target.textContent);
@@ -76,7 +76,7 @@ const NotePractice = () => {
                     }
                 }
             ></QuizBox>
-        </>
+        </main>
     );
 };
 

@@ -33,3 +33,7 @@ header {
     border-color: white;
     border-width: 0px;
 }
+
+#header-nav-links button:hover {
+    background-color: rgb(197, 197, 197);
+}
