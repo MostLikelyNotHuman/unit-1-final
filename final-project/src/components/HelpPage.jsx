@@ -13,6 +13,7 @@ import flat from '../assets/images/help-page/flat.png'
 import { intervals } from '../assets/intervals';
 import { useRef } from 'react';
 import Button from './pieces/Button';
+import Divider from './pieces/Divider';
 
 const HelpPage = () => {
 
@@ -50,6 +51,7 @@ const HelpPage = () => {
                             activities, but is by no means a complete overview of the basics of reading music. 
                             Feel free to use whatever other resources you would like to help improve your skills!</p>
                 </div>
+                <Divider />
                 <div id='help-notes' ref={notesRef}>  
                     <h3>Notes</h3>
                         <p>Notes are arranged on something called a <strong>staff</strong>, which is this set of horizontal
@@ -77,6 +79,7 @@ const HelpPage = () => {
                             </tbody>
                         </table>
                 </div> 
+                <Divider />
                 <div id='help-intervals' ref={intervalsRef}>
                     <h3>Intervals</h3>
                         <p>The word 'interval' refers to the distance in pitch between two notes.
@@ -166,6 +169,7 @@ const HelpPage = () => {
                             </tbody>
                         </table>
                 </div>
+                <Divider />
                 <div id='help-rhythm' ref={rhythmRef}>
                     <h3>Rhythm</h3>
                     <p>Notes placed on a staff don't just tell you their pitch, they also tell you their rhythm.
