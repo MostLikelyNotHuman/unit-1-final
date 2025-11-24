@@ -54,14 +54,14 @@ const HelpPage = () => {
                     <h3>Notes</h3>
                         <p>Notes are arranged on something called a <strong>staff</strong>, which is this set of horizontal
                         lines.</p>
-                            <img src={staffImage} width={400}></img>
+                            <img src={staffImage} width={400} alt='A blank musical staff, with five lines and four spaces.'></img>
                         <p>Each line and space on the staff represents a different pitch.
                         A common way to remember where each note goes is to use the mnemonic
                         'Every Good Boy Deserves Fudge' for the lines E G B D F, and
                         the word FACE for the spaces F A C and E.</p>
-                            <img src={notesImage} width={400}></img>
+                            <img src={notesImage} width={400} alt='The notes E through F, spanning the staff.'></img>
                         <p>The exercises here use two additional notes that sit just below the staff, C and D.</p>
-                            <img src={additionalNotes} width={150}></img>
+                            <img src={additionalNotes} width={150} alt='The notes C and D, just below the staff.'></img>
                         <p>Maybe you've noticed - the notes start over at A after G! The system only 
                         uses the first seven letters of the alphabet to identify notes. However, there are more 
                         than seven notes - there are actually twelve! Each of these notes can be modified in pitch 
@@ -71,8 +71,8 @@ const HelpPage = () => {
                         <table>
                             <tbody>
                                 <tr>
-                                    <td width={100}><img src={sharp}></img>Sharp symbol</td>
-                                    <td width={100}><img src={flat}></img>Flat symbol</td>
+                                    <td width={100}><img src={sharp} alt='The musical sharp symbol.'></img>Sharp symbol</td>
+                                    <td width={100}><img src={flat} alt='The musical flat symbol.'></img>Flat symbol</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -101,67 +101,67 @@ const HelpPage = () => {
                                 <tr>
                                     <td>Unison</td>
                                     <td>0</td>
-                                    <td><img src={intervals[0].img}></img>C - C</td>
+                                    <td><img src={intervals[0].img} alt='The note C on a staff, representing a unison interval.'></img>C - C</td>
                                 </tr>
                                 <tr>
                                     <td>Minor Second</td>
                                     <td>1</td>
-                                    <td><img src={intervals[1].img}></img>C - D♭</td>
+                                    <td><img src={intervals[1].img} alt='The notes C and D flat on a staff, representing a minor second interval.'></img>C - D♭</td>
                                 </tr>
                                 <tr>
                                     <td>Major Second</td>
                                     <td>2</td>
-                                    <td><img src={intervals[2].img}></img>C - D</td>
+                                    <td><img src={intervals[2].img} alt='The notes C and D on a staff, representing a major second interval.'></img>C - D</td>
                                 </tr>
                                 <tr>
                                     <td>Minor Third</td>
                                     <td>3</td>
-                                    <td><img src={intervals[3].img}></img>C - E♭</td>
+                                    <td><img src={intervals[3].img} alt='The notes C and E flat on a staff, representing a minor third interval.'></img>C - E♭</td>
                                 </tr>
                                 <tr>
                                     <td>Major Third</td>
                                     <td>4</td>
-                                    <td><img src={intervals[4].img}></img>C - E</td>
+                                    <td><img src={intervals[4].img} alt='The notes C and E on a staff, representing a major third interval.'></img>C - E</td>
                                 </tr>
                                 <tr>
                                     <td>Perfect Fourth</td>
                                     <td>5</td>
-                                    <td><img src={intervals[5].img}></img>C - F</td>
+                                    <td><img src={intervals[5].img} alt='The notes C and F on a staff, representing a perfect fourth interval.'></img>C - F</td>
                                 </tr>
                                 <tr>
                                     <td>Tritone</td>
                                     <td>6</td>
-                                    <td><img src={intervals[6].img}></img>C - G♭</td>
+                                    <td><img src={intervals[6].img} alt='The notes C and G flat on a staff, representing a tritone interval.'></img>C - G♭</td>
                                 </tr>
                                 <tr>
                                     <td>Perfect Fifth</td>
                                     <td>7</td>
-                                    <td><img src={intervals[7].img}></img>C - G</td>
+                                    <td><img src={intervals[7].img} alt='The notes C and G on a staff, representing a perfect fifth interval.'></img>C - G</td>
                                 </tr>
                                 <tr>
                                     <td>Minor Sixth</td>
                                     <td>8</td>
-                                    <td><img src={intervals[8].img}></img>C - A♭</td>
+                                    <td><img src={intervals[8].img} alt='The notes C and A flat on a staff, representing a minor sixth interval.'></img>C - A♭</td>
                                 </tr>
                                 <tr>
                                     <td>Major Sixth</td>
                                     <td>9</td>
-                                    <td><img src={intervals[9].img}></img>C - A</td>
+                                    <td><img src={intervals[9].img} alt='The notes C and A on a staff, representing a major sixth interval.'></img>C - A</td>
                                 </tr>
                                 <tr>
                                     <td>Minor Seventh</td>
                                     <td>10</td>
-                                    <td><img src={intervals[10].img}></img>C - B♭</td>
+                                    <td><img src={intervals[10].img} alt='The notes C and B flat on a staff, representing a minor seventh interval.'></img>C - B♭</td>
                                 </tr>
                                 <tr>
                                     <td>Major Seventh</td>
                                     <td>11</td>
-                                    <td><img src={intervals[11].img}></img>C - B</td>
+                                    <td><img src={intervals[11].img} alt='The notes C and B on a staff, representing a major seventh interval.'></img>C - B</td>
                                 </tr>
                                 <tr>
                                     <td>Octave</td>
                                     <td>12</td>
-                                    <td><img src={intervals[12].img}></img>C - C</td>
+                                    <td><img src={intervals[12].img} alt='Two C notes on a staff, representing an octave.'></img>C - C</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -183,8 +183,8 @@ const HelpPage = () => {
                         <tbody>
                             <tr>
                                 <td>4</td>
-                                <td><img src={wholeNote}></img></td>
-                                <td className="table-two-images"><img src={halfNote}></img><img src={halfNote}></img></td>
+                                <td><img src={wholeNote} alt='One whole note.'></img></td>
+                                <td className="table-two-images"><img src={halfNote}></img><img src={halfNote} alt='Two half notes.'></img></td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -193,8 +193,8 @@ const HelpPage = () => {
                             </tr>
                             <tr>
                                 <td>2</td>
-                                <td><img src={halfNote}></img></td>
-                                <td className="table-two-images"><img src={quarterNote}></img><img src={quarterNote}></img></td>
+                                <td><img src={halfNote} alt='One half note.'></img></td>
+                                <td className="table-two-images"><img src={quarterNote}></img><img src={quarterNote} alt='Two quarter notes.'></img></td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -203,8 +203,8 @@ const HelpPage = () => {
                             </tr>
                             <tr>
                                 <td>1</td>
-                                <td><img src={quarterNote}></img></td>
-                                <td><img src={eighth2}></img></td>
+                                <td><img src={quarterNote} alt='One quarter note.'></img></td>
+                                <td><img src={eighth2} alt='Two eighth notes'></img></td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -213,8 +213,8 @@ const HelpPage = () => {
                             </tr>
                             <tr>
                                 <td>1/2</td>
-                                <td><img src={eighthNote}></img></td>
-                                <td><img src={sixteenth2}></img></td>
+                                <td><img src={eighthNote} alt='One eighth note.'></img></td>
+                                <td><img src={sixteenth2} alt='Two sixteenth notes.'></img></td>
                             </tr>
                             <tr>
                                 <td></td>

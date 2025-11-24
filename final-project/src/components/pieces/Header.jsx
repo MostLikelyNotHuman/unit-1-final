@@ -6,7 +6,11 @@ const Header = () => {
 
     return (
         <header>
-            <h2 id='logo'><Link to="/">LOGO</Link></h2> 
+            <div id="header-home-link">
+                <Link to={'/'}>
+                    <Button text={'MUSIC'} />
+                </Link>
+            </div>
             <div id='header-nav-links'>
                 <Link to={'/practice-notes'}>
                     <Button text={'Notes'} />
