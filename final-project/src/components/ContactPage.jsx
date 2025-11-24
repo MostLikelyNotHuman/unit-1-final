@@ -9,20 +9,41 @@ const ContactPage = () => {
     const [ name, setName ] = useState('');
     const [ email, setEmail ] = useState('');
     const [ feedbackType, setFeedbackType ] = useState('');
+    const [ error, setError ] = useState('');
+    const [ feedback, setFeedback ] = useState('');
     const [ feedbackSubmitted, setFeedbackSubmitted ] = useState(false);
     const [ isSending, setIsSending ] = useState(false);
+
+
 
     const handleChange = (field, value) => {
         field(value);
     }
     
+    const emailValidation = /^\S+@\S+\.\S+$/;
+    
     const verifyInput = () => {
+        console.log(emailValidation.test(email));
         if (!name) {
-
+            return setError('Please enter your name.')
+        } else if (!emailValidation.test(email)) {
+            return setError('Please enter a valid email address.')
+        } else if (feedbackType === '') {
+            return setError('Please select the type of feedback.')
+        } else if (feedback.length < 25) {
+            return setError('Please enter at least 25 characters of feedback.')
         }
+        setError('');
+        confirmSubmission();
     }
 
-
+    const confirmSubmission = () => {
+        setIsSending(true);
+        setTimeout(() => {
+            setIsSending(false);
+            setFeedbackSubmitted(true);
+        }, "2000");
+    }
 
     return (
         <main className="contactPage-main">
@@ -32,7 +53,7 @@ const ContactPage = () => {
             <form id="contact-form">
                 <fieldset>
                     <legend>Your Information</legend>
-                    <label for="name">Name:
+                    <label htmlFor="name">Name:</label>
                         <input 
                             type="text" 
                             value={name} 
@@ -40,53 +61,61 @@ const ContactPage = () => {
                             required
                             onChange={(e) => handleChange(setName, e.target.value)}
                         />
-                    </label>
-                    <label for="email">Email: 
+                    <label htmlFor="email">Email:</label>
                         <input
                             type="email"
                             value={email}
                             id="email"
+                            placeholder="yourname@example.com"
                             required
                             onChange={(e) => handleChange(setEmail, e.target.value)}
                         />
-                    </label>
                 </fieldset>
                 <fieldset>
                     <legend>Feedback</legend>
-                    <label for="feedback-type">Type of Feedback
-                        <select id="feedback-type" onChange={(e) => handleChange(setFeedbackType, e.target.value)}>
+                    <label htmlFor="feedback-type">Type of Feedback</label>
+                        <select id="feedback-type" required onChange={(e) => handleChange(setFeedbackType, e.target.value)}>
                             <option value="">Select...</option>
                             <option value="general-feedback">General Feedback</option>
                             <option value="report-bug">Report a Bug</option>
                             <option value="report-error">Report an Error</option>
                         </select>
-                    </label>
-                    <label for="text-area">Feedback:
+                    <label htmlFor="text-area">Feedback:</label>
                         <textarea 
                             id="text-area" 
-                            rows="5" 
-                            cols="50" 
                             required
-                            placeholder="Your feedback here...">
+                            placeholder="Please enter at least 25 characters..."
+                            onChange={(e) => handleChange(setFeedback, e.target.value)}>
                         </textarea>
-                    </label>
                 </fieldset>
-                <Button text="Submit" onClick={(e) => {
-                    e.preventDefault();}} />
+                <Button 
+                    id="feedback-submit" 
+                    text="Submit" 
+                    onClick={(e) => {
+                        e.preventDefault();
+                        verifyInput();
+                        }
+                    } />
             </form>
-            <p> {name}, {email}, {feedbackType}</p>
-            {feedbackSubmitted &&
-                <div id="feedback-confirmation">
-                    <p>Thank you, {name}! I'll look over your feedback and get 
-                        back to you as soon as possible!
-                    </p>
-                </div>
-            }
-        </main>
-
-        
+            <div id="feedback-result">
+                {error && 
+                    <div id="error-message">
+                        <p>{error}</p>
+                    </div>
+                }
+                {isSending &&
+                    <div>
+                        <p>Sending...</p>    
+                    </div>}
+                {feedbackSubmitted && !isSending &&
+                    <div id="feedback-confirmation">
+                        <p>Thank you for your feedback! I'll get back to you as soon as possible!
+                        </p>
+                    </div>
+                }
+            </div>
+        </main>        
     );
-
 }
 
 export default ContactPage;

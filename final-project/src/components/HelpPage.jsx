@@ -77,10 +77,12 @@ const HelpPage = () => {
                             called <strong>Sharps (♯)</strong> and <strong>Flats (♭)</strong>, and represent a slightly 
                             higher or lower pitch, respectively.</p>
                             <table>
-                                <tr>
-                                    <td width={100}><img src={sharp}></img>Sharp symbol</td>
-                                    <td width={100}><img src={flat}></img>Flat symbol</td>
-                                </tr>
+                                <tbody>
+                                    <tr>
+                                        <td width={100}><img src={sharp}></img>Sharp symbol</td>
+                                        <td width={100}><img src={flat}></img>Flat symbol</td>
+                                    </tr>
+                                </tbody>
                             </table>
                     </div> 
                     <div id='help-intervals' ref={intervalsRef}>
@@ -96,77 +98,80 @@ const HelpPage = () => {
                             <p>Every interval has its own unique name. The following are the ones you'll need to know 
                             for the exercises here.</p>
                             <table id='interval-table'>
-                                <tr>
-                                    <th>Interval</th>
-                                    <th>Distance in Half Steps</th>
-                                    <th>Example</th>
-                                </tr>
-                                <tr>
-                                    <td>Unison</td>
-                                    <td>0</td>
-                                    <td><img src={intervals[0].img}></img>C - C</td>
-                                </tr>
-                                <tr>
-                                    <td>Minor Second</td>
-                                    <td>1</td>
-                                    <td><img src={intervals[1].img}></img>C - D♭</td>
-                                </tr>
-                                <tr>
-                                    <td>Major Second</td>
-                                    <td>2</td>
-                                    <td><img src={intervals[2].img}></img>C - D</td>
-                                </tr>
-                                <tr>
-                                    <td>Minor Third</td>
-                                    <td>3</td>
-                                    <td><img src={intervals[3].img}></img>C - E♭</td>
-                                </tr>
-                                <tr>
-                                    <td>Major Third</td>
-                                    <td>4</td>
-                                    <td><img src={intervals[4].img}></img>C - E</td>
-                                </tr>
-                                <tr>
-                                    <td>Perfect Fourth</td>
-                                    <td>5</td>
-                                    <td><img src={intervals[5].img}></img>C - F</td>
-                                </tr>
-                                <tr>
-                                    <td>Tritone</td>
-                                    <td>6</td>
-                                    <td><img src={intervals[6].img}></img>C - G♭</td>
-                                </tr>
-                                <tr>
-                                    <td>Perfect Fifth</td>
-                                    <td>7</td>
-                                    <td><img src={intervals[7].img}></img>C - G</td>
-                                </tr>
-                                <tr>
-                                    <td>Minor Sixth</td>
-                                    <td>8</td>
-                                    <td><img src={intervals[8].img}></img>C - A♭</td>
-                                </tr>
-                                <tr>
-                                    <td>Major Sixth</td>
-                                    <td>9</td>
-                                    <td><img src={intervals[9].img}></img>C - A</td>
-                                </tr>
-                                <tr>
-                                    <td>Minor Seventh</td>
-                                    <td>10</td>
-                                    <td><img src={intervals[10].img}></img>C - B♭</td>
-                                </tr>
-                                <tr>
-                                    <td>Major Seventh</td>
-                                    <td>11</td>
-                                    <td><img src={intervals[11].img}></img>C - B</td>
-                                </tr>
-                                <tr>
-                                    <td>Octave</td>
-                                    <td>12</td>
-                                    <td><img src={intervals[12].img}></img>C - C</td>
-                                </tr>
-                                
+                                <thead>
+                                    <tr>
+                                        <th>Interval</th>
+                                        <th>Distance in Half Steps</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Unison</td>
+                                        <td>0</td>
+                                        <td><img src={intervals[0].img}></img>C - C</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Minor Second</td>
+                                        <td>1</td>
+                                        <td><img src={intervals[1].img}></img>C - D♭</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Major Second</td>
+                                        <td>2</td>
+                                        <td><img src={intervals[2].img}></img>C - D</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Minor Third</td>
+                                        <td>3</td>
+                                        <td><img src={intervals[3].img}></img>C - E♭</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Major Third</td>
+                                        <td>4</td>
+                                        <td><img src={intervals[4].img}></img>C - E</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Perfect Fourth</td>
+                                        <td>5</td>
+                                        <td><img src={intervals[5].img}></img>C - F</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tritone</td>
+                                        <td>6</td>
+                                        <td><img src={intervals[6].img}></img>C - G♭</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Perfect Fifth</td>
+                                        <td>7</td>
+                                        <td><img src={intervals[7].img}></img>C - G</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Minor Sixth</td>
+                                        <td>8</td>
+                                        <td><img src={intervals[8].img}></img>C - A♭</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Major Sixth</td>
+                                        <td>9</td>
+                                        <td><img src={intervals[9].img}></img>C - A</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Minor Seventh</td>
+                                        <td>10</td>
+                                        <td><img src={intervals[10].img}></img>C - B♭</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Major Seventh</td>
+                                        <td>11</td>
+                                        <td><img src={intervals[11].img}></img>C - B</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Octave</td>
+                                        <td>12</td>
+                                        <td><img src={intervals[12].img}></img>C - C</td>
+                                    </tr>
+                                </tbody>
                             </table>
                     </div>
                     <div id='help-rhythm' ref={rhythmRef}>
@@ -176,51 +181,55 @@ const HelpPage = () => {
                         above, but there are many more. A whole note represents four beats, a half note represents 
                         two beats, a quarter note represents a single beat, and so on.</p>
                         <table>
-                            <tr>
-                                <th>Beats</th>
-                                <th>Note ...</th>
-                                <th>is equal in duration to:</th>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td><img src={wholeNote}></img></td>
-                                <td className="table-two-images"><img src={halfNote}></img><img src={halfNote}></img></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>One Whole Note</td>
-                                <td>Two Half Notes</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td><img src={halfNote}></img></td>
-                                <td className="table-two-images"><img src={quarterNote}></img><img src={quarterNote}></img></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>One Half Note</td>
-                                <td>Two Quarter Notes</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td><img src={quarterNote}></img></td>
-                                <td><img src={eighth2}></img></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>One Quarter Note</td>
-                                <td>Two Eighth Notes</td>
-                            </tr>
-                            <tr>
-                                <td>1/2</td>
-                                <td><img src={eighthNote}></img></td>
-                                <td><img src={sixteenth2}></img></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>One Eighth Note</td>
-                                <td>Two Sixteenth Notes</td>
-                            </tr>
+                            <thead>
+                                <tr>
+                                    <th>Beats</th>
+                                    <th>Note ...</th>
+                                    <th>is equal in duration to:</th>
+                                </tr>
+                            </thead>  
+                            <tbody>
+                                <tr>
+                                    <td>4</td>
+                                    <td><img src={wholeNote}></img></td>
+                                    <td className="table-two-images"><img src={halfNote}></img><img src={halfNote}></img></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>One Whole Note</td>
+                                    <td>Two Half Notes</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td><img src={halfNote}></img></td>
+                                    <td className="table-two-images"><img src={quarterNote}></img><img src={quarterNote}></img></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>One Half Note</td>
+                                    <td>Two Quarter Notes</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td><img src={quarterNote}></img></td>
+                                    <td><img src={eighth2}></img></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>One Quarter Note</td>
+                                    <td>Two Eighth Notes</td>
+                                </tr>
+                                <tr>
+                                    <td>1/2</td>
+                                    <td><img src={eighthNote}></img></td>
+                                    <td><img src={sixteenth2}></img></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>One Eighth Note</td>
+                                    <td>Two Sixteenth Notes</td>
+                                </tr>
+                            </tbody>  
                         </table>
                         <p>Theoretically this continues on forever, but notes with a shorter duration are less common.</p>
                     </div>
