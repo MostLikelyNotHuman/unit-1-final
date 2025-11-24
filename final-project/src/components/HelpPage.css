@@ -27,6 +27,14 @@ p {
     font-size: 18px;
 }
 
+li {
+    font-size: 18px;
+}
+
+#help-content li {
+    margin-left: 20px;
+}
+
 img {
     display: block;
     margin: auto;
