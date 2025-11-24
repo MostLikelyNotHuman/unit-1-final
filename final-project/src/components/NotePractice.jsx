@@ -1,4 +1,4 @@
-import QuizBox from "./pieces/QuizBox";
+import QuizBox from "./pieces/QuizBoxNotes";
 import { notes } from "../assets/notes";
 import { useEffect, useState, useRef } from "react";
 

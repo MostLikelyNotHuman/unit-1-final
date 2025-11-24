@@ -29,11 +29,15 @@ button {
 }
 
 #question-content {
+    background-color: white;
     display: flex;
     flex-direction: row;
     padding: 20px;
     position: absolute;
-    height: 50vw; 
+    top: 90px;
+    height: 140px;
+    width: 160px;
+    border-radius: 10px;
 }
 
 #question-content img {
@@ -41,7 +45,7 @@ button {
     height: 150px;
     width: 150px;
     position: absolute;
-    top: 180px;
+    top: 90px;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
@@ -49,13 +53,22 @@ button {
     border-radius: 10px;
 }
 
-#question-switches {
-    height: 50px;
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 140px;
-    left: 100px;
+#question-content #image1 {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+#question-content #image2 {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+#quizBox #question-content #image1-offset {
+    background-color: rgba(0, 0, 0, 0);
+    left: 57%;
+}
+
+#quizBox #question-content #image2-offset {
+    background-color: rgba(255, 255, 255, 0);
+    left: 43%;
 }
 
 #question-answers {
@@ -67,12 +80,11 @@ button {
     position: absolute;
     width: 50vw;
     bottom: 50px;
-
 }
 
 #quizBox button {
     flex: 1 0 40%;
-    height: 50px;
+    height: 70px;
     width: 100px;
     margin: 15px;
     background-color: white;
@@ -81,18 +93,24 @@ button {
     border-radius: 20px;
     border-color: white;
     border-width: 0px;
+    min-width: 180px;
 }
 
-#quizBox #next-button button {
+#next-div {
     display: flex;
     position: absolute;
-    top: 290px;
-    right: 12px;
-    width: 150px;
-    height: 40px;
+    top: 380px;
+    width: 50vw;
+    height: 80px;
     font-size: 16px;
-    justify-content: center;
-    align-items: center;
+    justify-content: right;
+    align-items: right;
+}
+
+#quizBox #next-div button {
+    height: 50px;
+    font-size: 20px;
+    max-width: 100px;
 }
 
 #quizBox button:hover {
@@ -112,6 +130,46 @@ button {
     background-color: rgb(183, 107, 107);
 }
 
-#next-button #next-button-disabled {
+#next-div #next-button-disabled {
     background-color: rgb(197, 197, 197);
 }
+
+@media (max-width: 1250px) {
+    #quizBox {
+        width: 75vw;
+    }
+    
+    #question-answers {
+        width: 60vw;
+
+    }
+
+    #next-div {
+        width: 60vw;
+    }
+
+}
+
+@media (max-width: 750px) {
+    #quizBox {
+        width: 85vw;
+        min-width: 300px;
+    }
+    
+    #question-answers {
+        width: 75vw;
+        bottom: 20px;
+    }
+
+    #question-answers button {
+        flex: 1 0 40%;
+        height: 50px;
+        min-width: 260px;
+    }
+
+    #next-div {
+        width: 75vw;
+        top: 300px;
+    }
+}
+

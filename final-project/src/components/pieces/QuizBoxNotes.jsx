@@ -1,9 +1,7 @@
 import { useState } from "react";
 import Button from "./Button";
-import HelpButton from "./HelpButton";
-import ToggleSwitch from "./ToggleSwitch";
 
-const QuizBox = ({ questionText, questionImage, answers, correctAnswer, selected, onSelect, nextClick }) => {
+const QuizBoxNotes = ({ questionText, questionImage, answers, correctAnswer, selected, onSelect, nextClick }) => {
 
     const [ answerDisabled, setAnswerDisabled ] = useState(false);
     const [ nextDisabled, setNextDisabled ] = useState(true);
@@ -14,12 +12,12 @@ const QuizBox = ({ questionText, questionImage, answers, correctAnswer, selected
             <h4>{questionText}</h4>
             <div id="question-content">
                 <img src={questionImage}></img>
-                <div id="question-switches">
+                {/* <div id="question-switches">
                     <ToggleSwitch />
                     <HelpButton />
-                </div>
+                </div> */}
             </div>
-            <div id="next-button">
+            <div id="next-div">
                 <Button onClick={() => {
                     nextClick();
                     setAnswerDisabled(false);
@@ -62,4 +60,4 @@ const QuizBox = ({ questionText, questionImage, answers, correctAnswer, selected
     );
 };
 
-export default QuizBox;
+export default QuizBoxNotes;
