@@ -1,50 +1,67 @@
-export const notes = {
-    c4: {
+import c4 from '../assets/images/notes/c4.webp'
+import d4 from '../assets/images/notes/d4.webp'
+import e4 from '../assets/images/notes/e4.webp'
+import f4 from '../assets/images/notes/f4.webp'
+import g4 from '../assets/images/notes/g4.webp'
+import a4 from '../assets/images/notes/a4.webp'
+import b4 from '../assets/images/notes/b4.webp'
+import c5 from '../assets/images/notes/c5.webp'
+
+export const notes = [
+    {
+        id: 'C4',
         pitch: 0,
         text: 'C',
-        img: './images/notes/c4.png',
+        img: c4,
         audio: ''
     },
-    d4: {
+    {
+        id: 'D4',
         pitch: 2,
         text: 'D',
-        img: './images/notes/d4.png',
+        img: d4,
         audio: ''
     },
-    e4: {
+    {
+        id: 'E4',
         pitch: 4,
         text: 'E',
-        img: './images/notes/e4.png',
+        img: e4,
         audio: ''
     },
-    f4: {
+    {
+        id: 'F4',
         pitch: 5,
         text: 'F',
-        img: './images/notes/f4.png',
+        img: f4,
         audio: ''
     },
-    g4: {
+    {
+        id: 'G4',
         pitch: 7,
         text: 'G',
-        img: './images/notes/g4.png',
+        img: g4,
         audio: ''
     },
-    a4: {
+    {
+        id: 'A4',
         pitch: 9,
         text: 'A',
-        img: './images/notes/a4.png',
+        img: a4,
         audio: ''
     },
-    b4: {
+    {   
+        id: 'B4',
         pitch: 11,
         text: 'B',
-        img: './images/notes/b4.png',
+        img: b4,
         audio: ''
     },
-    c5: {
+    {
+        id: 'C5',
         pitch: 12,
         text: 'C',
-        img: './images/notes/c4.png',
+        img: c5,
         audio: ''
     }
-};
+];

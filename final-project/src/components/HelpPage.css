@@ -44,6 +44,11 @@ table {
     margin: auto;  
 }
 
+#interval-table img {
+    height: 100px;
+    width: 100px;
+}
+
 table tr td {
     text-align: center;
 }
@@ -62,4 +67,16 @@ table tr td img {
 
 .table-two-images img {
     margin: 0px 5px;
+}
+
+@media (max-width: 750px) {
+
+    .helpPage-main {
+        flex-direction: column-reverse;
+    }
+
+    #nav-bar {
+        width: auto;
+    }
+
 }

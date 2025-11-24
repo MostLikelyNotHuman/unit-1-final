@@ -1,5 +1,3 @@
-import Footer from "./pieces/Footer";
-import Header from "./pieces/Header";
 import './HelpPage.css';
 import staffImage from '../assets/images/help-page/staff.png';
 import notesImage from '../assets/images/help-page/all-notes.png';
@@ -10,7 +8,10 @@ import eighthNote from '../assets/images/rhythm/eighth-note.png';
 import eighth2 from '../assets/images/rhythm/eighth-2.png';
 import sixteenthNote from '../assets/images/rhythm/sixteenth-note.png';
 import sixteenth2 from '../assets/images/rhythm/sixteenth-2.png';
-import { notes } from "../assets/notes";
+import additionalNotes from '../assets/images/help-page/additional-notes.png'
+import sharp from '../assets/images/help-page/sharp.png'
+import flat from '../assets/images/help-page/flat.png'
+import { intervals } from '../assets/intervals';
 
 
 const HelpPage = () => {
@@ -27,9 +28,9 @@ const HelpPage = () => {
                             you can find exercises to test your ability to recognize notes, intervals, and rhythms.</p>
                         <p> The goal is that you take the skills you learn here and go on to:</p>
                         <ul>
-                            <li>Transcribe your favorite songs!</li>
-                            <li>Write your own music!</li>
                             <li>Read your favorite music!</li>
+                            <li>Write your own music!</li>
+                            <li>Transcribe your favorite songs!</li>
                             <li>And many more activities!</li>
                         </ul>
                         <p>This help page covers the things you'll need to know to interact with the different 
@@ -44,17 +45,32 @@ const HelpPage = () => {
                         'Every Good Boy Deserves Fudge' for the lines E G B D F, and
                         the word FACE for the spaces F A C and E.</p>
                             <img src={notesImage} width={400}></img>
+                        <p>The exercises here use two additional notes that sit just below the staff, C and D.</p>
+                            <img src={additionalNotes} width={150}></img>
                         <p>Maybe you've noticed - the notes start over at A after G! The system only 
                         uses the first seven letters of the alphabet to identify notes. However, there are more 
                         than seven notes - there are actually twelve! Each of these notes can be modified in pitch 
-                        by placing something called an <strong>accidental</strong> before it.</p>
+                        by placing something called an <strong>accidental</strong> before it. These are 
+                        called <strong>Sharps (♯)</strong> and <strong>Flats (♭)</strong>, and represent raising or 
+                        lowering the pitch displayed, respectively.</p>
+                        <table>
+                            <tr>
+                                <td width={100}><img src={sharp}></img>Sharp symbol</td>
+                                <td width={100}><img src={flat}></img>Flat symbol</td>
+                            </tr>
+                        </table>
+                        <p>{`An oddity to keep in mind with this system is that, while most of the notes are separated 
+                            by two half steps (A -> A♯ -> B), this does not hold for the spaces between B and C and 
+                            between E and F. These two sets of notes are only a half step apart. While an E can have a sharp 
+                            accidental, an E♯ and an F are the same pitch!`}
+                        </p>
                     <h3>Intervals</h3>
                         <p>The word 'interval' refers to the distance in pitch between two notes.
                         The smallest distance between two notes in western music is called a <strong>half-step</strong> or a <strong>semitone</strong>. 
-                        This is the distance between G and G# or B and Bb, for instance.</p>
+                        This is the distance between G and G♯ or B and B♭, for instance.</p>
                         <p>Every interval has its own unique name. The following are the ones you'll need to know 
                         for the exercises here.</p>
-                        <table>
+                        <table id='interval-table'>
                             <tr>
                                 <th>Interval</th>
                                 <th>Distance in Half Steps</th>
@@ -63,55 +79,67 @@ const HelpPage = () => {
                             <tr>
                                 <td>Unison</td>
                                 <td>0</td>
-                                <td><img src={notes[0].img}>C - C</img> C - C</td>
+                                <td><img src={intervals[0].img}></img>C - C</td>
                             </tr>
                             <tr>
                                 <td>Minor Second</td>
                                 <td>1</td>
+                                <td><img src={intervals[1].img}></img>C - D♭</td>
                             </tr>
                             <tr>
                                 <td>Major Second</td>
                                 <td>2</td>
+                                <td><img src={intervals[2].img}></img>C - D</td>
                             </tr>
                             <tr>
                                 <td>Minor Third</td>
                                 <td>3</td>
+                                <td><img src={intervals[3].img}></img>C - E♭</td>
                             </tr>
                             <tr>
                                 <td>Major Third</td>
                                 <td>4</td>
+                                <td><img src={intervals[4].img}></img>C - E</td>
                             </tr>
                             <tr>
                                 <td>Perfect Fourth</td>
                                 <td>5</td>
+                                <td><img src={intervals[5].img}></img>C - F</td>
                             </tr>
                             <tr>
                                 <td>Tritone</td>
                                 <td>6</td>
+                                <td><img src={intervals[6].img}></img>C - G♭</td>
                             </tr>
                             <tr>
                                 <td>Perfect Fifth</td>
                                 <td>7</td>
+                                <td><img src={intervals[7].img}></img>C - G</td>
                             </tr>
                             <tr>
                                 <td>Minor Sixth</td>
                                 <td>8</td>
+                                <td><img src={intervals[8].img}></img>C - A♭</td>
                             </tr>
                             <tr>
                                 <td>Major Sixth</td>
                                 <td>9</td>
+                                <td><img src={intervals[9].img}></img>C - A</td>
                             </tr>
                             <tr>
                                 <td>Minor Seventh</td>
                                 <td>10</td>
+                                <td><img src={intervals[10].img}></img>C - B♭</td>
                             </tr>
                             <tr>
                                 <td>Major Seventh</td>
                                 <td>11</td>
+                                <td><img src={intervals[11].img}></img>C - B</td>
                             </tr>
                             <tr>
                                 <td>Octave</td>
                                 <td>12</td>
+                                <td><img src={intervals[12].img}></img>C - C</td>
                             </tr>
                             
                         </table>

@@ -1,11 +1,15 @@
 header {
     display: flex;
     background-color: rgb(206, 221, 255);
+    height: 80px;
 }
 
 #logo {
+    display: flex;
     flex: 1;
     margin-left: 20px;
+    align-items: center;
+
 }
 
 #header-nav-links {
@@ -15,4 +19,17 @@ header {
     justify-content: right;
     align-items: center;
     margin-right: 20px;
+}
+
+#header-nav-links button {
+    flex: 1 0 40%;
+    height: 40px;
+    width: 80px;
+    margin: 5px;
+    background-color: white;
+    color: black;
+    font-size: 18px;
+    border-radius: 15px;
+    border-color: white;
+    border-width: 0px;
 }
