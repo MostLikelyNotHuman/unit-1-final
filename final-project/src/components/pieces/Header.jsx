@@ -6,10 +6,8 @@ const Header = () => {
 
     return (
         <>
-            <head>
-                <title>Music for Beginners</title>
-            </head>
             <header>
+                <title>Music for Beginners</title>
                 <div id="header-home-link">
                     <Link to={'/'}>
                         <Button text={'MUSIC'} />

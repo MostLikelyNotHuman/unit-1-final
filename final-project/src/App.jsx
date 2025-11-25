@@ -14,7 +14,6 @@ function App() {
 
   const [ reviewNotes, setReviewNotes ] = useState([]);
   const [ reviewIntervals, setReviewIntervals ] = useState([]);
-  console.log(reviewIntervals);
 
   return (
     <>
