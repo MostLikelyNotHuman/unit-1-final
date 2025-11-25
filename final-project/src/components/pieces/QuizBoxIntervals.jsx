@@ -4,8 +4,6 @@ import './QuizBoxNew.css';
 
 const QuizBoxIntervals = ({ questionText, questionImage, answers, correctAnswer, selected, onSelect, intervalsReview, setIntervalsReview, nextClick }) => {
 
-    console.log(intervalsReview);
-
     const [ answerDisabled, setAnswerDisabled ] = useState(false);
     const [ nextDisabled, setNextDisabled ] = useState(true);
     const [ nextId, setNextId ] = useState('next-button-disabled');
@@ -35,7 +33,7 @@ const QuizBoxIntervals = ({ questionText, questionImage, answers, correctAnswer,
                         setIntervalsReview([...intervalsReview, correctAnswer])
                     }
                 }} 
-                text={'Add to Intervals'}/>
+                text={'Add to Review'}/>
                 <Button onClick={() => {
                     nextClick();
                     setAnswerDisabled(false);
