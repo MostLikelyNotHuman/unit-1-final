@@ -31,6 +31,12 @@ const QuizBoxIntervals = ({ questionText, questionImage, answers, correctAnswer,
             </div>
             <div id="next-div">
                 <Button onClick={() => {
+                    if (!intervalsReview.find((problem) => problem === correctAnswer)) {
+                        setIntervalsReview([...intervalsReview, correctAnswer])
+                    }
+                }} 
+                text={'Add to Intervals'}/>
+                <Button onClick={() => {
                     nextClick();
                     setAnswerDisabled(false);
                     setNextDisabled(true);
@@ -39,14 +45,6 @@ const QuizBoxIntervals = ({ questionText, questionImage, answers, correctAnswer,
                 id={nextId}
                 disabled={nextDisabled}
                 text={"New Question ->"}/>
-            </div>
-            <div id="add-to-review">
-                <Button onClick={() => {
-                    if (!intervalsReview.find((problem) => problem === correctAnswer)) {
-                        setIntervalsReview([...intervalsReview, correctAnswer])
-                    }
-                }} 
-                text={'Add to Intervals'}/>
             </div>
             <div id="question-answers">
                {answers.map((a) => { //Maps four answers, adds styling for correct and incorrect answers once clicked on

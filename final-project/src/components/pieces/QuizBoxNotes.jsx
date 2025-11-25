@@ -16,6 +16,13 @@ const QuizBoxNotes = ({ questionText, questionImage, answers, correctAnswer, sel
             </div>
             <div id="next-div">
                 <Button onClick={() => {
+                    if (!notesReview.find((problem) => problem === correctAnswer)) {
+                        setNotesReview([...notesReview, correctAnswer])
+                    }
+                }} 
+                id={'add-review-button'}
+                text={'Add to Review'}/>
+                <Button onClick={() => {
                     nextClick();
                     setAnswerDisabled(false);
                     setNextDisabled(true);
@@ -24,14 +31,6 @@ const QuizBoxNotes = ({ questionText, questionImage, answers, correctAnswer, sel
                 id={nextId}
                 disabled={nextDisabled}
                 text={"New Question ->"}/>
-            </div>
-            <div id="add-to-review">
-                <Button onClick={() => {
-                    if (!notesReview.find((problem) => problem === correctAnswer)) {
-                        setNotesReview([...notesReview, correctAnswer])
-                    }
-                }} 
-                text={'Add to Review'}/>
             </div>
             <div id="question-answers">
                {answers.map((a) => { //Maps four answers, adds styling for correct and incorrect answers once clicked on 

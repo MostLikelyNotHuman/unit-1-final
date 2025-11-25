@@ -30,7 +30,7 @@ function App() {
         <Route path="/review" element={<ReviewPage
                                           reviewNotes={reviewNotes}
                                           setReviewNotes={setReviewNotes}
-                                          Intervals={reviewIntervals}
+                                          reviewIntervals={reviewIntervals}
                                           setReviewIntervals={setReviewIntervals} />} />
         <Route path="/help" element={<HelpPage />} />
         <Route path="/contact" element={<ContactPage />} />

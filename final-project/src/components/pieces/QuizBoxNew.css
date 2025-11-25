@@ -90,7 +90,7 @@
     width: 50vw;
     height: 80px;
     font-size: 16px;
-    justify-content: right;
+    justify-content: space-between;
     align-items: right;
 }
 
@@ -104,14 +104,16 @@
     display: flex;
     position: absolute;
     top: 380px;
-    width: 50vw;
+    width: 20vw;
     height: 80px;
     font-size: 16px;
     justify-content: left;
     align-items: left;
+    
+
 }
 
-#quizBox #add-to-review button {
+#quizBox #add-review-button button{
     height: 50px;
     font-size: 20px;
     max-width: 100px;
@@ -182,11 +184,6 @@
     }
 
     #next-div {
-        width: 75vw;
-        top: 300px;
-    }
-
-    #quizBox #add-to-review {
         width: 75vw;
         top: 300px;
     }
