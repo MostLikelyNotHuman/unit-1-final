@@ -3,8 +3,6 @@ import './ReviewPage.css';
 
 const ReviewPage = ({ reviewNotes, setReviewNotes, reviewIntervals, setReviewIntervals }) => {
 
-    console.log(reviewIntervals);
-
     return (
         <main className="review-list">
             <h3>Review!</h3>

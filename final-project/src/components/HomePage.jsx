@@ -17,7 +17,7 @@ const HomePage = () => {
             <Divider />
             <div id='homepage-starting-prompt'>
                 <h3>Ready to get started?</h3>
-                <p>Select any of the practices below</p>
+                <p>Select any of the practices below.</p>
                 <p>Note: All practices can also be accessed through the navigation bar at the top of the page.</p>
                 <div id='homepage-starting-prompt-buttons'>
                     <Link to={'/practice-notes'}>
@@ -25,9 +25,6 @@ const HomePage = () => {
                     </Link>
                     <Link to={'/practice-intervals'}>
                         <Button text={'Intervals'}/>    
-                    </Link>
-                    <Link to={'/practice-rhythm'}>
-                        <Button text={'Rhythm'}/>
                     </Link>
                 </div>
             </div>
