@@ -3,7 +3,7 @@ import { notes } from "../assets/notes";
 import { useEffect, useState, useRef } from "react";
 
 
-const NotePractice = () => {
+const NotePractice = ({ notesReview, setNotesReview }) => {
 
     const [ questionImage, setQuestionImage ] = useState(null);
     const [ answers, setAnswers ] = useState([]);
@@ -44,6 +44,8 @@ const NotePractice = () => {
                 questionImage={questionImage}
                 answers={answers}
                 correctAnswer={correctAnswer.current}
+                notesReview={notesReview}
+                setNotesReview={setNotesReview}
                 selected={selected}
                 onSelect={setSelected}
                 answerDisabled={answerDisabled}

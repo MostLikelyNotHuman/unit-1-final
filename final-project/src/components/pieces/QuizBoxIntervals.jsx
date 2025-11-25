@@ -2,13 +2,15 @@ import { useEffect, useState } from "react";
 import Button from "./Button";
 import './QuizBoxNew.css';
 
-const QuizBoxIntervals = ({ questionText, questionImage, answers, correctAnswer, selected, onSelect, nextClick }) => {
+const QuizBoxIntervals = ({ questionText, questionImage, answers, correctAnswer, selected, onSelect, intervalsReview, setIntervalsReview, nextClick }) => {
+
+    console.log(intervalsReview);
 
     const [ answerDisabled, setAnswerDisabled ] = useState(false);
     const [ nextDisabled, setNextDisabled ] = useState(true);
     const [ nextId, setNextId ] = useState('next-button-disabled');
     const [ stylingId, setStylingId ] = useState([]);
-
+        
     useEffect(() => { //Orders the images in the second intervals so the lower one is always on the left
         if (correctAnswer === 'Major Second' || correctAnswer === 'Minor Second') {
             setStylingId(['image1-offset', 'image2-offset']);
@@ -37,6 +39,14 @@ const QuizBoxIntervals = ({ questionText, questionImage, answers, correctAnswer,
                 id={nextId}
                 disabled={nextDisabled}
                 text={"New Question ->"}/>
+            </div>
+            <div id="add-to-review">
+                <Button onClick={() => {
+                    if (!intervalsReview.find((problem) => problem === correctAnswer)) {
+                        setIntervalsReview([...intervalsReview, correctAnswer])
+                    }
+                }} 
+                text={'Add to Intervals'}/>
             </div>
             <div id="question-answers">
                {answers.map((a) => { //Maps four answers, adds styling for correct and incorrect answers once clicked on
