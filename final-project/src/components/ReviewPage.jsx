@@ -1,4 +1,5 @@
 import Button from "./pieces/Button";
+import './ReviewPage.css';
 
 const ReviewPage = ({ reviewNotes, setReviewNotes, reviewIntervals, setReviewIntervals }) => {
 
@@ -27,7 +28,7 @@ const ReviewPage = ({ reviewNotes, setReviewNotes, reviewIntervals, setReviewInt
                 <p>Nothing to review!</p>
             }
             <h4>Intervals: </h4>
-            {/* {reviewIntervals.length ?
+            {reviewIntervals.length ?
                 <div id="review-intervals">
                     <ul>
                         {reviewIntervals.map(problem => <li key={problem}>{problem}</li>)}
@@ -39,8 +40,8 @@ const ReviewPage = ({ reviewNotes, setReviewNotes, reviewIntervals, setReviewInt
                         }}
                     /> 
                 </div> :
-                <p>Nothing to review!</p> */}
-            {/* } */}
+                <p>Nothing to review!</p>
+            }
         </main>
     );
 
