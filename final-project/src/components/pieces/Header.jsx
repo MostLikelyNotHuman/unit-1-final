@@ -18,6 +18,9 @@ const Header = () => {
                 <Link to={'/practice-intervals'}>
                     <Button text={'Intervals'}/>    
                 </Link>
+                <Link to={'/review'}>
+                    <Button text={'Review'}/>
+                </Link>
                 <Link to={"/help"}>
                     <Button text={'Help'}/>
                 </Link>

@@ -3,7 +3,7 @@ import { notes } from "../assets/notes";
 import { useEffect, useRef, useState } from "react";
 import QuizBoxIntervals from "./pieces/QuizBoxIntervals";
 
-const IntervalPractice = () => {
+const IntervalPractice = ({ intervalsReview, setIntervalsReview }) => {
 
     const [ questionImage, setQuestionImage ] = useState([]);
     const [ answers, setAnswers ] = useState([]);
@@ -64,6 +64,8 @@ const IntervalPractice = () => {
                 questionImage={questionImage}
                 answers={answers}
                 correctAnswer={correctAnswer.current}
+                intervalsReview={intervalsReview}
+                setIntervalsReview={setIntervalsReview}
                 selected={selected}
                 onSelect={setSelected}
                 answerDisabled={answerDisabled}

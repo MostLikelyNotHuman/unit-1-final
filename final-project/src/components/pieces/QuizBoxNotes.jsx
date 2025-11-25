@@ -2,7 +2,7 @@ import { useState } from "react";
 import Button from "./Button";
 import './QuizBoxNew.css'
 
-const QuizBoxNotes = ({ questionText, questionImage, answers, correctAnswer, selected, onSelect, nextClick }) => {
+const QuizBoxNotes = ({ questionText, questionImage, answers, correctAnswer, selected, onSelect, notesReview, setNotesReview, nextClick }) => {
 
     const [ answerDisabled, setAnswerDisabled ] = useState(false);
     const [ nextDisabled, setNextDisabled ] = useState(true);
@@ -24,6 +24,14 @@ const QuizBoxNotes = ({ questionText, questionImage, answers, correctAnswer, sel
                 id={nextId}
                 disabled={nextDisabled}
                 text={"New Question ->"}/>
+            </div>
+            <div id="add-to-review">
+                <Button onClick={() => {
+                    if (!notesReview.find((problem) => problem === correctAnswer)) {
+                        setNotesReview([...notesReview, correctAnswer])
+                    }
+                }} 
+                text={'Add to Review'}/>
             </div>
             <div id="question-answers">
                {answers.map((a) => { //Maps four answers, adds styling for correct and incorrect answers once clicked on 
